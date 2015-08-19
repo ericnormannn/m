@@ -1,0 +1,275 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+
+// Base colors
+// ------------------------------------
+
+@black: #000;
+@gray-darker: #222;
+@gray-dark: #333;
+@gray: #555;
+@gray-light: #999;
+@gray-lighter: #eee;
+@white: #fff;
+
+
+
+// Brand colors
+// ------------------------------------
+
+@brand-primary: #B00700;
+@brand-secondary: #ff0000;
+@brand-accent: #00ff00;
+@brand-base: #fff;
+
+@brand-success: #16AF6F;
+@brand-warning: #f0ad4e;
+@brand-error: #d9534f;
+
+
+
+// Scaffolding
+// ------------------------------------
+
+@body-bg: #fff;
+@text-color: #222;
+
+@selection-bg: #b3d4fc;
+@selection-color: inherit;
+
+@placeholder-color: @text-color;
+@placeholder-text-transform: none;
+
+@border-radius-base: 4px;
+@border-radius-sm: 3px;
+@border-radius-lg: 6px;
+
+@content-block-base: 16px;
+@content-block-sm: (@content-block-base / 2);
+@content-block-lg: (@content-block-base * 1.5);
+@content-block-xl: (@content-block-base * 2);
+
+@stripe-base: 16px;
+@stripe-sm: (@stripe-base / 2);
+@stripe-lg: (@stripe-base * 1.5);
+@stripe-xl: (@stripe-base * 2);
+
+@inner-base: 16px;
+@inner-sm: (@inner-base / 2);
+@inner-lg: (@inner-base * 1.5);
+@inner-xl: (@inner-base * 2);
+
+
+
+// Links
+// ------------------------------------
+
+@link-color: @brand-primary;
+@link-color-hover: saturate(@link-color, 15%);
+
+@link-decoration: none;
+@link-decoration-hover: underline;
+
+
+
+// Typography
+// ------------------------------------
+
+@font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif: Georgia, "Times New Roman", Times, serif;
+@font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
+
+@font-family-base: @font-family-sans-serif;
+@font-family-headings: @font-family-serif;
+@font-family-alt: @font-family-monospace;
+
+@font-size-base: 16px;
+@font-size-sm: ceil((@font-size-base * 0.85));
+@font-size-lg: ceil((@font-size-base * 1.25));
+
+@font-size-h1: 54px;
+@font-size-h2: 46px;
+@font-size-h3: 36px;
+@font-size-h4: 30px;
+@font-size-h5: 24px;
+@font-size-h6: 18px;
+
+@font-weight-base: 300;
+@font-weight-headings: 400;
+
+@line-height-base: 1.4;
+@line-height-computed: floor(@font-size-base * @line-height-base);
+@line-height-headings: 1.1;
+
+@text-transform-headings: none;
+
+@text-light: #fff;
+@text-dark: @text-color;
+
+
+
+// Iconography
+// ------------------------------------
+
+@icon-font-name: 'FontCustom';
+@icon-font-path: '../fonts/fontcustom';
+
+@icon-li-width: (30em / 14);
+
+
+
+// Alerts
+// ------------------------------------
+
+@alert-border: 1px solid transparent;
+@alert-border-radius: @border-radius-base;
+@alert-padding: 16px;
+
+@alert-success-bg: @brand-success;
+@alert-success-border: @brand-success;
+@alert-success-color: #fff;
+
+@alert-info-bg: @brand-warning;
+@alert-info-border: @brand-warning;
+@alert-info-color: #fff;
+
+@alert-error-bg: @brand-error;
+@alert-error-border: @brand-error;
+@alert-error-color: #fff;
+
+
+
+// Buttons
+// ------------------------------------
+
+@btn-border: 1px solid transparent;
+@btn-border-radius: @border-radius-base;
+
+@btn-font-family: @font-family-headings;
+@btn-font-size: @font-size-base;
+@btn-font-weight: 400;
+
+@btn-padding-horizontal: 12px;
+@btn-padding-vertical: 8px;
+
+@btn-text-transform: none;
+
+@btn-transition: 0.15s ease-in-out;
+
+
+
+// Dropdowns
+// ------------------------------------
+
+@dropdown-bg: #fff;
+// @dropdown-bg-hover: @brand-neutral-light;
+// @dropdown-border-color: @brand-neutral-medium;
+// @dropdown-color: @brand-neutral-medium;
+// @dropdown-color-hover: @brand-primary;
+
+// @dropdown-caret-color: @brand-neutral-medium;
+@dropdown-caret-size: 8px;
+
+
+
+// Forms
+// ------------------------------------
+
+@input-bg: #fff;
+@input-bg-disabled: @gray-lighter;
+
+@input-color: @text-color;
+
+@input-border: 1px solid @gray;
+
+@input-border-radius: @border-radius-base;
+@input-border-radius-sm: @border-radius-sm;
+@input-border-radius-lg: @border-radius-lg;
+
+@input-font-size: @font-size-base;
+
+@input-group-addon-bg: @gray-lighter;
+@input-group-addon-border: 1px solid @gray;
+@input-group-addon-color: #fff;
+
+@input-padding-horizontal: 12px;
+@input-padding-horizontal-sm: 8px;
+@input-padding-horizontal-lg: 16px;
+
+@input-padding-vertical: 11px;
+@input-padding-vertical-sm: 7px;
+@input-padding-vertical-lg: 15px;
+
+
+
+// Grid
+// ------------------------------------
+
+@container-sm: (720px + @grid-gutter-width);
+@container-md: (940px + @grid-gutter-width);
+@container-lg: (1140px + @grid-gutter-width);
+
+@grid-columns: 12;
+@grid-gutter-width: 30px;
+
+@block-grid-columns: 5; // max
+@block-grid-gutter-width: @grid-gutter-width;
+
+
+
+// iOS Toggle
+// ------------------------------------
+
+@ios-toggle-color: @brand-primary; // #13bf11
+@ios-toggle-border-radius: 15px;
+
+
+
+// Media Query Breakpoints
+// ------------------------------------
+
+@xs-min: 480px;
+@xs-max: (@sm-min - 1);
+@screen-xs-min: unit((@xs-min / @font-size-base), em);
+@screen-xs-max: unit((@xs-max / @font-size-base), em);
+
+@sm-min: 600px;
+@sm-max: (@md-min - 1);
+@screen-sm-min: unit((@sm-min / @font-size-base), em);
+@screen-sm-max: unit((@sm-max / @font-size-base), em);
+
+@md-min: 768px;
+@md-max: (@lg-min - 1);
+@screen-md-min: unit((@md-min / @font-size-base), em);
+@screen-md-max: unit((@md-max / @font-size-base), em);
+
+@lg-min: 992px;
+@lg-max: (@xl-min - 1);
+@screen-lg-min: unit((@lg-min / @font-size-base), em);
+@screen-lg-max: unit((@lg-max / @font-size-base), em);
+
+@xl-min: 1200px;
+@screen-xl-min: unit((@xl-min / @font-size-base), em);
+
+
+
+// Carousel
+// ------------------------------------
+
+@carousel-duration: 1.5s;
+
+@carousel-indicator-bg: @gray-lighter;
+@carousel-indicator-bg-active: @gray-light;
+@carousel-indicator-border-radius: 50%;
+@carousel-indicator-size: 20px;
+
+
+
+// Marquee
+// ------------------------------------
+
+@marquee-distance: 640px;
+@marquee-duration: 5s;

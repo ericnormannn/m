@@ -1,0 +1,64 @@
+//
+// Marquee
+// ----------------------------------------------------
+
+@keyframes slide-left {
+	from {
+		left: 0;
+	}
+	to {
+		left: (@marquee-distance * -1);
+	}
+}
+
+@keyframes slide-right {
+	from {
+		left: 0;
+	}
+	to {
+		left: @marquee-distance;
+	}
+}
+
+.marquee {
+	box-sizing: border-box;
+	overflow: hidden;
+	position: relative;
+
+	img {
+		width: 100%;
+	}
+
+	.marquee-inner {
+		display: inline-flex;
+		margin-left: (@marquee-distance * -1);
+		position: relative;
+		white-space: nowrap;
+
+		.animate& {
+			animation: @marquee-duration linear infinite;
+
+			[data-direction="left"]& {
+				animation-name: slide-left;
+			}
+
+			[data-direction="right"]& {
+				animation-name: slide-right;
+			}
+		}
+
+		.paused& {
+			animation-play-state: paused;
+		}
+	}
+
+	.item {
+		width: @marquee-distance;
+
+		.no-flexbox & {
+			box-sizing: border-box;
+			display: inline-block;
+			margin-right: -4px;
+		}
+	}
+}

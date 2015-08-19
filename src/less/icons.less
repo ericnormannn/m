@@ -1,0 +1,117 @@
+//
+// Icons
+// --------------------------------------------------
+
+
+// Import font
+.font-face(@icon-font-name, @icon-font-path);
+
+.icon {
+	font-family: @icon-font-name;
+	display: inline-block;
+	line-height: 1;
+	text-decoration: inherit;
+	top: 1px;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	@font-face {
+		font-family: @icon-font-name;
+		src: url('@{icon-font-path}.svg#@{icon-font-name}') format('svg');
+	}
+}
+
+
+
+// Helpers
+// ------------------------------------
+
+// 33% larger relative to container
+.icon-lg {
+	font-size: (4em / 3);
+	line-height: (3em / 4);
+	vertical-align: -15%;
+}
+
+.icon-2x {
+	font-size: 2em;
+}
+
+.icon-3x {
+	font-size: 3em;
+}
+
+.icon-4x {
+	font-size: 4em;
+}
+
+.icon-5x {
+	font-size: 5em;
+}
+
+// Fixed width (useful for lists)
+.icon-fw {
+	text-align: center;
+	width: (18em / 14);
+}
+
+// Vertically center
+.icon-vc {
+	vertical-align: middle;
+}
+
+
+
+// List Icons
+// ------------------------------------
+
+.icon-ul {
+	list-style-type: none;
+	margin-left: @icon-li-width;
+	padding-left: 0;
+
+	> li {
+		position: relative;
+	}
+}
+
+.icon-li {
+	left: -@icon-li-width;
+	position: absolute;
+	text-align: center;
+	top: (2em / 14);
+	width: @icon-li-width;
+
+	&.icon-lg {
+		left: -@icon-li-width + (4em / 14);
+	}
+}
+
+
+
+// Spinning Icons
+// ------------------------------------
+
+@keyframes icon-spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(359deg);
+	}
+}
+
+.icon-spin {
+	animation: icon-spin 2s infinite linear;
+}
+
+
+
+// Custom Icons
+// ------------------------------------
+
+// .icon-name {
+// 	.icon-variant('unicode');
+// }
