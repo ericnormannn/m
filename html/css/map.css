@@ -1,0 +1,163 @@
+.smartgridMap, .locations-list {
+	height: 475px!important;
+}
+
+.page-map .marker {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50em;
+  outline: none;
+  background-color: orange;
+
+  cursor: pointer;
+  background-size: 40%;
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  -ms-transition: all 0.15s ease-out 0;
+  -o-transition: all 0.15s ease-out 0;
+  transition: all 0.15s ease-out 0; }
+
+.page-map .popup {
+  width: 570px;
+  height: 290px;
+  position: absolute;
+  padding: 0;
+  margin-left: 150px;
+  background: white;
+  color: #6b6261;
+  font-size: 12px;
+  line-height: 20px;
+  overflow: hidden;
+  cursor: default;
+  box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.3);
+  z-index: 20; }
+  .page-map .popup h3 {
+    text-align: center;
+    font-weight: 200;
+    font-size: 45px;
+    line-height: 1; }
+  .page-map .popup.sanfrancisco h3, .page-map .popup.capetown h3, .page-map .popup.johannesburg h3 {
+    font-size: 35px; }
+  .page-map .popup .countrydesc {
+    display: block;
+    width: 260px;
+    height: 250px;
+    padding: 20px;
+    margin-left: 235px;
+    overflow: hidden;
+    position: relative; }
+    .page-map .popup .countrydesc p {
+      padding-top: 20px; }
+.page-map .popup .close {
+  display: block;
+  text-indent: -9999px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  outline: none;
+  background: url("../img/close.gif") no-repeat;
+  cursor: pointer;
+  opacity: 0.4; }
+  .page-map .popup .close:hover {
+    opacity: 1; }
+.page-map .i-link {
+  width: 58px;
+  height: 58px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: url("../img/i.png") center center no-repeat;
+  z-index: 5;
+  cursor: pointer;
+  background-size: 100%;
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  -ms-transition: all 0.15s ease-out 0;
+  -o-transition: all 0.15s ease-out 0;
+  transition: all 0.15s ease-out 0; }
+  .page-map .i-link:hover {
+    background-size: 120%; }
+.page-map .fixedfooter {
+  position: fixed;
+  width: 100%;
+  height: 82px;
+  background-color: white;
+  bottom: 0;
+  z-index: 100; }
+
+.ie-tard-activate {
+  background: #000 url('../img/world_map.jpg') no-repeat center center;
+  padding: 30px; }
+  .ie-tard-activate .ie-before, .ie-tard-activate .ie-after {
+    width: 522px;
+    background: white;
+    padding: 30px;
+    margin-bottom: 10px; }
+    .ie-tard-activate .ie-before p.kicker, .ie-tard-activate .ie-after p.kicker {
+      margin-bottom: 20px;
+      color: black; }
+    .ie-tard-activate .ie-before p, .ie-tard-activate .ie-after p {
+      color: #999999;
+      line-height: 1.8; }
+  .ie-tard-activate .ie-after p {
+    margin-bottom: 20px; }
+  .ie-tard-activate .ie-trash {
+    background: white;
+    padding: 30px;
+    margin-bottom: 80px;
+    max-width: 960px; }
+    .ie-tard-activate .ie-trash .ie-unit-link {
+      display: block;
+      color: #666666;
+      font-weight: 200;
+      padding: 20px 0;
+      *zoom: 1; }
+      .ie-tard-activate .ie-trash .ie-unit-link:before, .ie-tard-activate .ie-trash .ie-unit-link:after {
+        content: " ";
+        display: table; }
+      .ie-tard-activate .ie-trash .ie-unit-link:after {
+        clear: both; }
+      .ie-tard-activate .ie-trash .ie-unit-link:hover {
+        background-color: #f3f2f0; }
+        .ie-tard-activate .ie-trash .ie-unit-link:hover .ie-arrow {
+          width: 24px; }
+      .ie-tard-activate .ie-trash .ie-unit-link > div {
+        float: left;
+        margin-right: 2%; }
+      .ie-tard-activate .ie-trash .ie-unit-link .ie-date {
+        width: 16%;
+        padding-left: 2%; }
+      .ie-tard-activate .ie-trash .ie-unit-link .ie-location {
+        width: 28%; }
+      .ie-tard-activate .ie-trash .ie-unit-link .ie-desc {
+        width: 45%;
+        font-size: 12px;
+        font-weight: 400;
+        position: relative; }
+      .ie-tard-activate .ie-trash .ie-unit-link .ie-arrow {
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: 50%;
+        right: -40px;
+        background: url("../img/CTA-arrow.png") center center no-repeat;
+        margin-top: -6px;
+        -webkit-transition: all 0.15s ease-out 0;
+        -moz-transition: all 0.15s ease-out 0;
+        -ms-transition: all 0.15s ease-out 0;
+        -o-transition: all 0.15s ease-out 0;
+        transition: all 0.15s ease-out 0; }
+        
+        .switcher{
+        	margin-top: 25px;
+        	margin-bottom: -20px;
+        }
+		.switcher a, .switcher a:visited{
+			color: #ff9000;
+		}
+		.switcher a:hover{
+		text-decoration: none;
+		}

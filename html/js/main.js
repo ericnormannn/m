@@ -56,14 +56,6 @@ $(document).ready(function(){
         $('.sign-up-form').show();
     });
 
-    $( ".launch-vid" ).hover(function(){
-        $(this).find( "span, h4" ).addClass('is-hover');
-    },
-        function () {
-           $(this).find("span, h4").removeClass('is-hover');
-    });
-
-
     $('.modal').hide();
 
     $('.page-hero .sign-up').click(function(){
@@ -76,7 +68,7 @@ $(document).ready(function(){
 
     $('.launch-vid').click(function(){
         $('main').fadeOut(500);
-        $('.vid-contain').fadeIn(700).addClass('enter-up');
+        $('.vid-contain').fadeIn(700).addClass('enter-up is-visible').show();
         $('.modal').fadeIn(600).show();
     });
 
@@ -119,36 +111,60 @@ $(document).ready(function(){
 
     $("ul.tabs").find('li:first').addClass('active');
 
-    $("ul.tabs li, .services ul li").click(function() {
+    $("ul.tabs li").click(function() {
         if(!$(this).hasClass('active')){
             $(".tab_content").hide();
             $('.slider').hide();
             $('.tabs_container').fadeIn();
-            $('.animated .fadeOutDown').removeClass('animated enter-right');
+            $('.animated .fadeOutDown').removeClass('animated fadeIn');
             var activeTab = $(this).attr("rel"); 
-            $("#"+activeTab).fadeIn(100).addClass('animated enter-right');        
+            $("#"+activeTab).fadeIn(100).addClass('animated fadeIn');        
             clearTimeout(interval);
             $("ul.tabs li").removeClass("active first_active");
             $(this).addClass("active");
         }
     });
 
+
+    var nav = $('.subBar');
+    if (nav.length) {
+        var fixmeTop = nav.offset().top -72;
+        $(window).scroll(function () {
+            var currentScroll = $(window).scrollTop();
+            if (currentScroll >= fixmeTop) {
+                $('.subBar').addClass('animated enter-down');
+                $('.subBar').removeClass('animated exit-up');
+                $('.subBar').css({
+                    visibility: 'visible',
+                    position: 'fixed',
+                    top: '0',
+                    opacity: '1'
+                });
+            } else {
+                $('.subBar').removeClass('animated enter-down');
+                $('.subBar').addClass('animated exit-up');
+                $('.subBar').css({
+                    visibility: 'hidden',
+                    position: 'absolute'
+                });
+            }
+        });
+    };
+
     $(function() {
       $('a[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html,body').animate({
-              scrollTop: target.offset().top
-            }, 500);
-            return false;
-          }
-        }
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+              if (target.length) {
+                $('html,body').animate({
+                  scrollTop: target.offset().top
+                }, 500);
+                return false;
+              }
+            }
+        });
     });
-});
-    
-
 });
 
 

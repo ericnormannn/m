@@ -1372,8 +1372,8 @@ Copyright (c) 2015 Daniel Eden
 @-webkit-keyframes fadeInUp {
   from {
     opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    -webkit-transform: translate3d(0, 1em, 0);
+    transform: translate3d(0, 1em, 0);
   }
 
   100% {
@@ -1386,10 +1386,10 @@ Copyright (c) 2015 Daniel Eden
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    -webkit-transform: translate3d(0, 1em, 0);
+    transform: translate3d(0, 1em, 0);
   }
-
+  
   100% {
     opacity: 1;
     -webkit-transform: none;
@@ -3284,6 +3284,7 @@ Copyright (c) 2015 Daniel Eden
     -webkit-transform: translate(2em);
   }
   100% {
+    visibility: visible;
     opacity: 1;
     -webkit-transform: translateY(0);
   } 
@@ -3292,10 +3293,13 @@ Copyright (c) 2015 Daniel Eden
   0% {
     opacity: 0;
     -moz-transform: translateY(2em);
+    transform: translateY(2em);
   }
   100% {
+    visibility: visible;
     opacity: 1;
     -moz-transform: translateY(0);
+    transform: translateY(0);
   }
 }
 @keyframes enter-up {
@@ -3308,6 +3312,7 @@ Copyright (c) 2015 Daniel Eden
     transform: translateY(2em);
   }
   100% {
+    visibility: visible;
     opacity: 1;
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
@@ -3417,7 +3422,7 @@ Copyright (c) 2015 Daniel Eden
 @-webkit-keyframes enter-down {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(-2em);
+    -webkit-transform: translateY(-1em);
   }
   100% {
     opacity: 1;
@@ -3427,7 +3432,7 @@ Copyright (c) 2015 Daniel Eden
 @-moz-keyframes enter-down {
   0% {
     opacity: 0;
-    -moz-transform: translateY(-2em);
+    -moz-transform: translateY(-1em);
   }
   100% {
     opacity: 1;
@@ -3437,11 +3442,11 @@ Copyright (c) 2015 Daniel Eden
 @keyframes enter-down {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(-2em);
-    -moz-transform: translateY(-2em);
-    -ms-transform: translateY(-2em);
-    -o-transform: translateY(-2em);
-    transform: translateY(-2em);
+    -webkit-transform: translateY(-1em);
+    -moz-transform: translateY(-1em);
+    -ms-transform: translateY(-1em);
+    -o-transform: translateY(-1em);
+    transform: translateY(-1em);
   }
   100% {
     opacity: 1;
@@ -3500,21 +3505,20 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .delay-2 {
-  opacity:0;
   -webkit-animation-delay: 0.2s;
   animation-delay: 0.2s;
-  -webkit-animation-duration: 0.8s;
-  animation-duration: 0.8s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-fill-mode: forwards;
   -animation-fill-mode: forwards;
 }
 
 .delay-3 {
-  opacity:0;
+  
   -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
-  -webkit-animation-duration: 0.8s;
-  animation-duration: 0.8s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-fill-mode: forwards;
   -animation-fill-mode: forwards;
 }
@@ -3523,18 +3527,18 @@ Copyright (c) 2015 Daniel Eden
   opacity:0;
   -webkit-animation-delay: 0.4s;
   animation-delay: 0.4s;
-  -webkit-animation-duration: 0.8s;
-  animation-duration: 0.8s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-fill-mode: forwards;
   -animation-fill-mode: forwards;
 }
 
 .delay-5 {
-  opacity:0;
+  opacity: 0;
   -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
-  -webkit-animation-duration: 0.8s;
-  animation-duration: 0.8s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-fill-mode: forwards;
   -animation-fill-mode: forwards;
 }
@@ -3543,8 +3547,8 @@ Copyright (c) 2015 Daniel Eden
   opacity:0;
   -webkit-animation-delay: 0.6s;
   animation-delay: 0.6s;
-  -webkit-animation-duration: 0.8s;
-  animation-duration: 0.8s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-fill-mode: forwards;
   -animation-fill-mode: forwards;
 }
@@ -3553,8 +3557,8 @@ Copyright (c) 2015 Daniel Eden
   opacity:0;
   -webkit-animation-delay: 0.7s;
   animation-delay: 0.7s;
-  -webkit-animation-duration: 0.8s;
-  animation-duration: 0.8s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-fill-mode: forwards;
   -animation-fill-mode: forwards;
 }

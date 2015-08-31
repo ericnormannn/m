@@ -1,18 +1,19 @@
 @brandPrimary: #0279c1;  // Movius Blue
-@brandLight: #f57b21;
+@brandLight: #f27a30;
 @brandDark: #040927; // Movius Orange
 @brandBold: 'NeuzeitGroT-Blac', serif;
 @brandBody: 'Open Sans', serif;
 
 body {
 	background-color: #f9f9f9;
+  color: #404040;
   font-size: 16px;
   font-family: @brandBody;
   .mq-screen-md-min({
       font-size: 18px;  
     });
 }
-
+     
 label {
 	color:#888;
 	bottom: 0.6rem;
@@ -24,19 +25,40 @@ label {
 
 a {
   text-decoration: none;
-  -webkit-transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
-  transition-duration: 0.3s;
+  -webkit-transition: color 0.3s linear;
+  -moz-transition: color 0.3s linear;
+  transition: color 0.3s linear;
+  -webkit-transition: background-color 0.3s linear;
+  -moz-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
 }
 
 img {
   max-width: 100%;
 }
 
+h2 {
+  line-height: 1.6
+}
+
 p {
   color:#757575;
   line-height: 1.6;
   font-size: 1rem;
+  font-weight: 400;
+}
+
+
+
+.container {
+  max-width: 100%;
+}
+
+.is-visible {
+  visibility: visible!important;
 }
 
 .maxer {
@@ -173,6 +195,9 @@ nav {
         opacity: 0.9;
         right: 0;
         position: relative;
+        -webkit-transition: opacity 0.2s linear;
+        -moz-transition: opacity 0.2s linear;
+        transition: opacity 0.2s linear;
 
         &:hover {
             opacity: 1;
@@ -185,6 +210,9 @@ nav {
           border: 2px solid rgba(255,255,255,0.2);
           padding: 10px 13px;
           border-radius: 3px;
+          -webkit-transition: background-color 0.3s linear;
+          -moz-transition: background-color 0.3s linear;
+          transition: background-color 0.3s linear;
 
           &:hover {
             background-color: transparent;
@@ -353,12 +381,17 @@ nav {
           left: 0;
           right: 0;
       }
+}
 
-      .vid-contain {
-        max-width: 100%;
-        width: 500px;
-        margin: 0 auto;
-      }
+.vid-contain {
+    max-width: 100%;
+    width: 500px;
+    margin: 0 auto;
+    visibility: hidden;
+    -webkit-transition: visibility 0.3s linear;
+  -moz-transition: visibility 0.6s linear;
+  transition: visibility 0.3s linear;
+ 
 }
 
 .close {
@@ -435,18 +468,15 @@ nav {
     }
 
     h4 {
-      font-family: @brandBold;
       font-size: 14px;
       letter-spacing: 1px;
       text-transform: uppercase;
       padding-bottom: 0.5rem;
-      opacity: 0.75;
     }
 
     p {
         padding-bottom: 1.5rem;
         max-width: 600px;
-        opacity: 0.75;
         color: #fff;
     }
 }
@@ -458,7 +488,7 @@ nav {
   overflow: hidden;
 }
 
-.launch-vid, .play{
+.launch-vid {
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
   transition-duration: 0.5s;
@@ -475,6 +505,7 @@ nav {
 
 .subBar {
     background: #fff;
+    border-bottom: 1px solid #E4E1E1;
     height: 75px;
     top: 200px;
     opacity: 0;
@@ -580,6 +611,39 @@ nav {
       }
 }
 
+.product-features {
+    text-align: left;
+
+      .item {
+          width: 48%;
+          padding: 1%;
+          padding-bottom: 1rem;
+          float: right;
+
+            .img-contain {
+              text-align: center;
+
+            }
+
+            img {
+              width: 60%;
+            }
+          
+            h4{
+              color: #555;
+
+            }
+
+            h1 {
+              color: @brandLight;
+            }
+            
+            p {  
+              font-size: 13px;
+            }
+      }
+}
+
 .calculator {
     min-height: 400px;
     overflow: hidden;
@@ -591,6 +655,10 @@ nav {
         color: #000;
         opacity: 0.4;
       }
+
+      h1 {
+        color: @brandPrimary;
+      }
       
       .row {
         -webkit-transition-duration: 0.5s;
@@ -600,7 +668,9 @@ nav {
 
       .recalc {
         color: @brandPrimary;
+        margin-top: 0;
       }
+
       .calculate-results 
           label {
               color: #555;
@@ -653,7 +723,7 @@ nav {
     }
 
     h4 {
-      font-family: @brandBold;
+      opacity: 0.75;
       font-size: 14px;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -676,6 +746,7 @@ nav {
   position: absolute;
   background-color: @brandLight;
   z-index: 999;
+  display: none;
 }
 
 #vid-bg {
@@ -729,7 +800,7 @@ nav {
     width: 100%;
     background-color: rgba(4, 9, 39, 1);
 
-    h1 {
+    h1, h2 {
       color: #fff;
     }
 
@@ -745,38 +816,97 @@ nav {
 .nav-tabs {
 
       .tabs {
-          background-color: @brandDark;
-          margin: 0;
+            background-color: rgba(2, 121, 193, 0.8);
+            margin: 10px;
+            padding: 0;
+            text-align: center;
+            margin-top: 70px;
+            position: relative;
+            left: 30px;
+          a {
+            padding: 12px 10px 12px 20px;
+          }  
 
           li, a {
               list-style: none;
               color: #fff;
-              display: inline-block;
+              display: block;
+              font-size: 13px;
+              -webkit-transition-duration: 0.3s;
+              -moz-transition-duration: 0.3s;
+              transition-duration: 0.3s;
 
           }
 
           li {
-            opacity: 0.6;
+            text-align: left;
+            
           }
 
           li.active {
+              background-color: @brandPrimary;
               opacity: 1;
+              border-left: 3px solid @brandLight;
           }
       }
 }
 
 .tab_content {
-
-      text-align: left;
+    text-align: left;
 }
+
+
+.tabs_container {
+      max-width: 90%;
+      background-color: #f8f8f8;
+
+      p {
+          padding-bottom: 1rem;
+      }
+      
+      .check-points {
+          margin-left: 0;
+          padding-left: 0;
+
+          .fa {
+              color: @brandLight;
+              font-size: 1.6rem;
+              padding-right: 1.2rem;
+              float: left;
+              display: inline;
+          }
+
+          li {
+              list-style: none;
+              padding-bottom: 1.4rem;
+            
+              span {
+                  border: none;
+                  color: #444;
+                  font-size: 1.1rem;
+                  display: inline;
+                  position: relative;
+                  padding: 0;
+              }
+          }
+
+      }    
+}
+
 
 
 footer {
       background-color: #eeeeee;
       
+      .maxer {
+        max-width: 1030px;
+        width: 90%;
+      }
+
       .logo {
           margin: 0 auto;
           padding-top: 0.5rem;
+          max-width: 120px;
       }
 
       li {
@@ -813,6 +943,9 @@ footer {
             display: block;
             font-size: 0.8rem;
             padding-bottom: 0.35rem;
+            -webkit-transition: color 0.3s linear;
+            -moz-transition: color 0.3s linear;
+             transition: color 0.3s linear;
 
             &:hover {
               color: @brandPrimary
@@ -825,5 +958,162 @@ footer {
             font-weight: 700;
       }
 }
+
+
+
+#mega-tabs {
+    position: relative;
+    display: block;
+    min-height: 500px;
+    overflow: hidden;
+
+    .mega-nav-tabs {
+      background-color: #E3EFF5;
+      position: absolute;
+      display: block;
+      float: left;
+      padding-top: 32px;
+      width: 25%;
+      height: 100%;
+
+          .tabs li {
+              text-align: left;
+              background-color: #E3EFF5;
+              list-style: none;
+              font-size: 13px;  
+              padding: 10px;
+              color: #888;
+              cursor: pointer;
+          }
+
+          .tabs a {
+              opacity: 0.6;
+          }
+
+          .tabs li.active a, .tabs li.active {
+              color: @brandPrimary;
+              opacity: 1;
+              background-color: #f8f8f8;
+              -webkit-transition: background-color 0.2s linear;
+              -moz-transition: background-color 0.2s linear;
+              transition: background-color 0.2s linear;
+          }
+    }
+    .tabs_container {
+     position: relative;
+      display: block;
+      float: right;
+      width: 75%;
+
+      h2 {
+        color: #404040;
+      }
+
+      p {
+        margin-top: 0.5rem;
+          color: #7f7f7f;
+  color: rgba(0,0,0,.5);
+      }
+
+      h5 {
+        color: @brandPrimary;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      img {
+        padding-bottom: 3rem;
+      }
+
+      .individual {
+        max-width: 24%;
+      }
+    
+    }
+
+}
+
+.login-form {
+    max-width: 310px;
+    height: 100vh;
+    margin: 0 auto;
+    max-width: 360px;
+    visibility: hidden;
+
+    .logo {
+      max-width: 150px;
+      margin: 0 auto;
+      padding-bottom: 1rem;
+    }
+
+    .flex {
+      height: 100vh;
+    }
+
+    form {
+          background-color: white;
+          padding: 40px;
+          overflow: hidden;
+          border: solid 1px #DFDFDF;
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+
+    }
+
+    form input[type=text], form input[type=email], form input[type=password], form select, form textarea {
+        padding: 12px;
+        border: 1px solid #cfd9db;
+        background-color: #fff;
+        border-radius: .25em;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.08);
+        font-size: 13px;
+        margin-bottom: 1.5rem;
+        margin: 0 auto;
+        padding-bottom: 10px;
+        margin-bottom: 1.5rem;
+        position: relative;
+        width: 250px;
+        max-width: 250px;
+        outline: none;
+    }
+
+    form input[type=submit] {
+      width: 100%;
+      margin: 0 auto;
+    }
+}
+
+.text-well {
+  text-align: left;
+}
+
+.locations-switcher {
+  text-align: left;
+  float: left;
+  border-radius: 50em;
+  padding: 10px;
+  background-color: #E3EFF5;
+  margin-bottom: 1rem;
+}
+
+.locations-list {
+  background-color: @brandPrimary;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
