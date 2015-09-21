@@ -738,4 +738,181 @@
 }
 
 
+.flex-list
+{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+ 
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+    .flex-list-item
+    {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
 
+[class*="block-grid-"] {
+  display: block;
+  margin: -(@grid-gutter-width/2);
+  padding: 0;
+} 
+
+.block-grid-item {
+  display: inline;
+  margin: 0;
+  padding: (@grid-gutter-width/2);
+  height: auto;
+  float: left;
+  width: 100%;
+  list-style: none;  // for those who like to use `li` elements as block-grid-items
+}
+
+.block-grid (@per-row) {
+  & > .block-grid-item {
+    width: (100%/@per-row);
+
+    @nth-equation: ~"@{per-row}n+1";
+    &:nth-of-type(n) { clear: none; }
+    &:nth-of-type(@{nth-equation}) { clear: both; }
+  }
+}
+
+// Recursive loop that produces rules for block grids of @per-row many items
+// per row down to 1 many items per row.
+.block-grids(@size, @per-row: @grid-columns) when (@per-row > 0) {
+  .block-grid-@{size}-@{per-row} { .block-grid(@per-row); }
+  .block-grids(@size, (@per-row - 1));
+}
+
+.block-grids(xs);
+@media (min-width: @screen-sm-min) { .block-grids(sm) }
+@media (min-width: @screen-md-min) { .block-grids(md) }
+@media (min-width: @screen-lg-min) { .block-grids(lg) }
+
+
+// # Block Grid Mixin
+//
+// Technique adapted from Foundation 5 for Bootstrap 3
+//
+// # Example Usage
+//
+// To produce a grid of 2 items per row on an extra-small screen, 3 items
+// on a small screen, 4 items on a medium screen and 6 items per row on large screen:
+//
+// ul.gallery {
+//   .make-block-grid-container();
+//   > li {
+//     .make-xs-block-grid(2);
+//     .make-sm-block-grid(3);
+//     .make-md-block-grid(4);
+//     .make-lg-block-grid(6);
+//   }
+// }
+
+// Or, in a quicker way with the shorthand syntax:
+//   ul.gallery {
+//     .make-block-grid(2,3,4,6)
+//   }
+
+//Mixins for Block Grids
+.make-block-grid-container (@spacing: @grid-gutter-width) {
+  list-style: none;
+  padding: 0;
+  margin-left: (@spacing / -2);
+  margin-right: (@spacing / -2);
+  &:extend(.clearfix all);
+  > * {
+    margin-bottom: @spacing;
+  }
+  > li {
+    &:before {
+      content: none !important;
+    }
+  }
+}
+.make-xs-block-grid (@blocks; @spacing: @grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left: (@spacing / 2);
+  padding-right: (@spacing / 2);
+  float: left;
+  width: percentage(1 / @blocks);
+  &:nth-of-type(1n) { clear: none; }
+  &:nth-of-type(@{blocks}n+1) { clear: both; }
+}
+.make-sm-block-grid (@blocks; @spacing: @grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left: (@spacing / 2);
+  padding-right: (@spacing / 2);
+  @media (min-width: @screen-sm-min) {
+    float: left;
+    width: percentage(1 / @blocks);
+    &:nth-of-type(1n) { clear: none; }
+    &:nth-of-type(@{blocks}n+1) { clear: both; }
+  }
+}
+.make-md-block-grid (@blocks; @spacing: @grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left: (@spacing / 2);
+  padding-right: (@spacing / 2);
+  @media (min-width: @screen-md-min) {
+    float: left;
+    width: percentage(1 / @blocks);
+    &:nth-of-type(1n) { clear: none; }
+    &:nth-of-type(@{blocks}n+1) { clear: both; }
+  }
+}
+.make-lg-block-grid (@blocks; @spacing: @grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left: (@spacing / 2);
+  padding-right: (@spacing / 2);
+  @media (min-width: @screen-lg-min) {
+    float: left;
+    width: percentage(1 / @blocks);
+    &:nth-of-type(1n) { clear: none; }
+    &:nth-of-type(@{blocks}n+1) { clear: both; }
+  }
+}
+
+// Make one mixin for all sizes so we don't have to call 4 mixins every time we use block grids
+.make-block-grid (@cols-xs, @cols-sm, @cols-md, @cols-lg) {
+  .make-block-grid-container();
+  >li {
+    .make-xs-block-grid(@cols-xs);
+    .make-sm-block-grid(@cols-sm);
+    .make-md-block-grid(@cols-md);
+    .make-lg-block-grid(@cols-lg);
+  }
+}
+
+/* centered columns styles 
+
+<div class="container">
+    <div class="row row-centered">
+        <div class="col-xs-6 col-centered"></div>
+        <div class="col-xs-6 col-centered"></div>
+        <div class="col-xs-3 col-centered"></div>
+        <div class="col-xs-3 col-centered"></div>
+        <div class="col-xs-3 col-centered"></div>
+    </div>
+</div>
+
+*/
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}

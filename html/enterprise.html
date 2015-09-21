@@ -8,39 +8,55 @@
     <link rel="stylesheet" href="css/project.css">
     <script src="js/modernizr.js"></script> <!-- Modernizr -->
     
-    <title>Enterprise</title>
+    <title>Enterprise</title>  
 </head>
 <body>  
-     <div class="subBar">
+<div id="site-wrapper"> 
+    <div class="mobile-nav">
+        <header>
+           <a href="#" class="toggle-nav"><img src="http://placehold.it/100x100"/></a>
+          {% include 'includes/nav.html' %} 
+        </header>
+    </div>     
+
+<main class="content">  
+    <div class="m-nav">
+        <div class="maxer clearfix">
+            <nav>
+                <div class="logo-contain">    
+                    <img class="logo" src="img/logo.svg"/>
+                </div> 
+                 
+                <a href="#" class="toggle-nav"><i class="fa fa-bars"></i></a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="subBar">
         <div class="full-width">    
             <div class="maxer clearfix">
                 <nav>
-                    <img class="logo" src="img/color-logo.svg"/>
-                    <ul>
-                        <li><a href="#0">Carriers / Operators</a></li>
-                        <li><a href="#0">Enterprise</a></li>
-                        <li><a href="#0">Company</a></li>
-                        <li><a href="#0">Contact</a></li>
-                        <li class="login"><a href="#0">Log in / Register</a></li>
-                    </ul>    
+                    <a href="#0" class="logo-link">
+                        <img class="logo" src="img/color-logo.svg"/>
+                    </a>
+                    {% include 'includes/nav.html' %}   
                 </nav>
             </div>
         </div>                
     </div> 
+
+
+
     <div class="page-hero" style="background-image:url(img/serverfarm.jpg)">
         <div class="overlay">
             <div class="full-width absolute">    
                 <div class="maxer clearfix">
                     <nav>
                         <img class="logo" src="img/logo.svg"/>
-                        <ul>
-                            <li><a href="#0">Carriers / Operators</a></li>
-                            <li><a href="#0">Enterprise</a></li>
-                            <li><a href="#0">Company</a></li>
-                            <li><a href="#0">Contact</a></li>
-                            <li class="login"><a href="#0">Log in / Register</a></li>
-                        </ul>    
+                         
+                    
                     </nav>
+
                 </div>
             </div>    
             <div class="flex">
@@ -49,6 +65,7 @@
                         <h1 class="fancy">Providing complete solutions, and industry leading applications</h1>
                         <a href="#0" class="btn get-started">Learn More</a>
                         <a href="#cta" class="btn sign-up">Get Started</a>
+                           
                     </div>
                 </div>
             </div> 
@@ -137,6 +154,84 @@
         </div>    
     </div>  
 
+    <div class="stripe-lrg quotes">
+        <div class="maxer clearfix">
+            <h1 class="fancy">Testimonials</h1>    
+                    <div class="clients-mobile-nav">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                              
+                    <div class="clients-belt">            
+                        <div class="client-unit animated fadeInUp active-client">          
+                                <figure class="client-face">
+                                    <img src="img/face.jpg" alt="client-face">
+                                    <figcaption>
+                                      <strong class="client-name">Name</strong>
+                                      <em class="client-title">Job Title</em>
+                                    </figcaption>
+                                </figure>
+                                   
+                                  <div class="client-content">
+                                    <div class="client-quote-mark"><?xml version="1.0" encoding="utf-8"?>
+                            <!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             enable-background="new 0 0 55 55" xml:space="preserve">
+                            <path d="M50.692,9.732c-12.207,6.16-18.309,14.697-18.309,25.615c0,3.64,1.147,6.733,3.443,9.28c2.295,2.548,5.01,3.821,8.146,3.821
+                                c2.799,0,5.123-0.979,6.971-2.939c1.848-1.959,2.771-4.367,2.771-7.223c0-2.688-0.953-5.052-2.855-7.097
+                                c-1.904-2.043-4.312-3.233-7.223-3.569c0-4.535,3.415-8.482,10.246-11.842L50.692,9.732z M19.87,9.732
+                                C7.72,15.891,1.645,24.429,1.645,35.347c0,3.64,1.134,6.733,3.401,9.28c2.268,2.548,4.968,3.821,8.104,3.821
+                                c2.799,0,5.136-0.979,7.013-2.939c1.875-1.959,2.813-4.367,2.813-7.223c0-2.688-0.953-5.052-2.856-7.097
+                                c-1.904-2.043-4.34-3.233-7.307-3.569c0-4.535,3.443-8.482,10.33-11.842L19.87,9.732z"/>
+                            </svg></div>
+                                    <p><strong>Phasellus sollicitudin</strong> Etiam nibh purus, molestie a rhoncus sit amet, imperdiet vel mi. Cras feugiat pharetra rutrum. Phasellus sollicitudin venenatis mauris, sit amet gravida neque accumsan eu. In hac habitasse platea dictumst. Sed dapibus tincidunt congue. Ut at ante nec neque convallis sollicitudin vel sit amet massa.</p>
+                                  </div>
+                                  
+                                </div>
+                                
+                                <div class="client-unit animated fadeInUp">
+                                  
+                                  <figure class="client-face">
+                                    <img src="img/selfie.jpg" alt="client-face">
+                                    <figcaption>
+                                      <strong class="client-name">Name</strong>
+                                      <em class="client-title">Eater of Salad, Antartica Int.</em>
+                                    </figcaption>
+                                  </figure>
+                                  
+                                  <div class="client-content">
+                                    <div class="client-quote-mark"><?xml version="1.0" encoding="utf-8"?>
+                            <!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             enable-background="new 0 0 55 55" xml:space="preserve">
+                            <path d="M50.692,9.732c-12.207,6.16-18.309,14.697-18.309,25.615c0,3.64,1.147,6.733,3.443,9.28c2.295,2.548,5.01,3.821,8.146,3.821
+                                c2.799,0,5.123-0.979,6.971-2.939c1.848-1.959,2.771-4.367,2.771-7.223c0-2.688-0.953-5.052-2.855-7.097
+                                c-1.904-2.043-4.312-3.233-7.223-3.569c0-4.535,3.415-8.482,10.246-11.842L50.692,9.732z M19.87,9.732
+                                C7.72,15.891,1.645,24.429,1.645,35.347c0,3.64,1.134,6.733,3.401,9.28c2.268,2.548,4.968,3.821,8.104,3.821
+                                c2.799,0,5.136-0.979,7.013-2.939c1.875-1.959,2.813-4.367,2.813-7.223c0-2.688-0.953-5.052-2.856-7.097
+                                c-1.904-2.043-4.34-3.233-7.307-3.569c0-4.535,3.443-8.482,10.33-11.842L19.87,9.732z"/>
+                            </svg></div>
+                                    <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong> Phasellus hendrerit in dolor eget finibus. Nunc ipsum diam, viverra ut ultrices quis, maximus sit amet nisi. Pellentesque tortor nunc, posuere molestie aliquet nec, fermentum in nisi. Aenean vitae malesuada lacus, quis sollicitudin nibh. Fusce quis porttitor urna.</p>
+                                  </div>
+                                  
+                                </div>
+                            </div>
+                              
+                <div class="client-controls">
+                    <div class="client-control-next">
+                        <img src="http://placehold.it/50x50"/>
+                    </div>
+                    <div class="client-control-prev">
+                        <img src="http://placehold.it/50x50"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     <div class="img-well" style="background-image: url('img/purse-lady.jpg');">
         <div class="flex">
             <div class="flex-item">
@@ -185,7 +280,7 @@
                         <label class="fancy">Total Savings</label>
                     </div>
                 </div>    
-                
+                <a href="#0" class="btn how-it-works">How It Works</a>
                 <a href="#0" class="btn recalc">Recalculate</a>
             </div> 
         </div>           
@@ -193,30 +288,194 @@
     </div>
 
     <div id="cta" class="call-to-action clearfix">
-        <div class="container stripe-lrg">
-            <div class="maxer clearfix">
-                <h1 class="fancy">We provide superior value, and scalable Savings</h1>
-                <p class="bottom-sml">Ready to get started? Reach out to our friendly professionals for Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Consectetur adipiscing elit.</p>
-                <a href="#cta" class="btn sign-up">Get Started</a>
-                <div class="animated enter-up sign-up-form">
-                    <div class="stripe_med">
-                        <form id="form" class="card inner-ex-sml clearfix" method="post" action="" accept-charset="UTF-8">
-                            
-                            <input type="hidden" name="action" value="contactForm/sendMessage">
-                            <input type="hidden" name="redirect" value="contact/thanks">
+                
+                    <div class="pricing-container has-margins">
+                        <div class="pricing-switcher">
+                            <p class="fieldset">
+                                <input type="radio" name="duration-2" value="monthly" id="monthly-2" checked>
+                                <label for="monthly-2">Monthly</label>
+                                <input type="radio" name="duration-2" value="yearly" id="yearly-2">
+                                <label for="yearly-2">Yearly</label>
+                                <span class="switch"></span>
+                            </p>
+                        </div> <!-- .pricing-switcher -->
 
-                            <input id="fromName" placeholder="Your Name" type="text" name="fromName" value="">
-                            
-                            <input id="fromEmail" placeholder="Your Email" type="text" name="fromEmail" value="">
+                        <ul class="pricing-list bounce-invert">
+                            <li>
+                                <ul class="pricing-wrapper">
+                                    <li data-type="monthly" class="is-visible">
+                                        <header class="pricing-header">
+                                            <h2>Basic</h2>
 
-                            
-                            <textarea rows="1" cols="1" id="message" placeholder="How can we help you?" name="message"></textarea>
-                            
+                                            <div class="price">
+                                                <span class="currency">$</span>
+                                                <span class="value">30</span>
+                                                <span class="duration">mo</span>
+                                            </div>
+                                        </header> <!-- .pricing-header -->
 
-                            <input class="btn send" type="submit" value="Send">
-                        </form>
-                    </div>  
-                </div>  
+                                        <div class="pricing-body">
+                                            <ul class="pricing-features">
+                                                <li><em>256MB</em> Memory</li>
+                                                <li><em>1</em> User</li>
+                                                <li><em>1</em> Website</li>
+                                                <li><em>1</em> Domain</li>
+                                                <li><em>Unlimited</em> Bandwidth</li>
+                                                <li><em>24/7</em> Support</li>
+                                            </ul>
+                                        </div> <!-- .pricing-body -->
+
+                                        <footer class="pricing-footer">
+                                            <a class="select" href="#0">Get Started</a>
+                                        </footer>  <!-- .pricing-footer -->
+                                    </li>
+
+                                    <li data-type="yearly" class="is-hidden">
+                                        <header class="pricing-header">
+                                            <h2>Basic</h2>
+
+                                            <div class="price">
+                                                <span class="currency">$</span>
+                                                <span class="value">320</span>
+                                                <span class="duration">yr</span>
+                                            </div>
+                                        </header> <!-- .pricing-header -->
+
+                                        <div class="pricing-body">
+                                            <ul class="pricing-features">
+                                                <li><em>256MB</em> Memory</li>
+                                                <li><em>1</em> User</li>
+                                                <li><em>1</em> Website</li>
+                                                <li><em>1</em> Domain</li>
+                                                <li><em>Unlimited</em> Bandwidth</li>
+                                                <li><em>24/7</em> Support</li>
+                                            </ul>
+                                        </div> <!-- .pricing-body -->
+
+                                        <footer class="pricing-footer">
+                                            <a class="select" href="#0">Get Started</a>
+                                        </footer>  <!-- .pricing-footer -->
+                                    </li>
+                                </ul> <!-- .pricing-wrapper -->
+                            </li>
+
+                            <li class="popular">
+                                <ul class="pricing-wrapper">
+                                    <li data-type="monthly" class="is-visible">
+                                        <header class="pricing-header">
+                                            <h2>Popular</h2>
+                                            <div class="price">
+                                                <span class="currency">$</span>
+                                                <span class="value">60</span>
+                                                <span class="duration">mo</span>
+                                            </div>
+                                        </header> <!-- .pricing-header -->
+
+                                        <div class="pricing-body">
+                                            <ul class="pricing-features">
+                                                <li><em>512MB</em> Memory</li>
+                                                <li><em>3</em> Users</li>
+                                                <li><em>5</em> Websites</li>
+                                                <li><em>7</em> Domains</li>
+                                                <li><em>Unlimited</em> Bandwidth</li>
+                                                <li><em>24/7</em> Support</li>
+                                            </ul>
+                                        </div> <!-- .pricing-body -->
+
+                                        <footer class="pricing-footer">
+                                            <a class="select" href="#0">Get Started</a>
+                                        </footer>  <!-- .pricing-footer -->
+                                    </li>
+
+                                    <li data-type="yearly" class="is-hidden">
+                                        <header class="pricing-header">
+                                            <h2>Popular</h2>
+
+                                            <div class="price">
+                                                <span class="currency">$</span>
+                                                <span class="value">630</span>
+                                                <span class="duration">yr</span>
+                                            </div>
+                                        </header> <!-- .pricing-header -->
+
+                                        <div class="pricing-body">
+                                            <ul class="pricing-features">
+                                                <li><em>512MB</em> Memory</li>
+                                                <li><em>3</em> Users</li>
+                                                <li><em>5</em> Websites</li>
+                                                <li><em>7</em> Domains</li>
+                                                <li><em>Unlimited</em> Bandwidth</li>
+                                                <li><em>24/7</em> Support</li>
+                                            </ul>
+                                        </div> <!-- .pricing-body -->
+
+                                        <footer class="pricing-footer">
+                                            <a class="select" href="#0">Get Started</a>
+                                        </footer>  <!-- .pricing-footer -->
+                                    </li>
+                                </ul> <!-- .pricing-wrapper -->
+                            </li>
+
+                            <li>
+                                <ul class="pricing-wrapper">
+                                    <li data-type="monthly" class="is-visible">
+                                        <header class="pricing-header">
+                                            <h2>Premier</h2>
+
+                                            <div class="price">
+                                                <span class="currency">$</span>
+                                                <span class="value">90</span>
+                                                <span class="duration">mo</span>
+                                            </div>
+                                        </header> <!-- .pricing-header -->
+
+                                        <div class="pricing-body">
+                                            <ul class="pricing-features">
+                                                <li><em>1024MB</em> Memory</li>
+                                                <li><em>5</em> Users</li>
+                                                <li><em>10</em> Websites</li>
+                                                <li><em>10</em> Domains</li>
+                                                <li><em>Unlimited</em> Bandwidth</li>
+                                                <li><em>24/7</em> Support</li>
+                                            </ul>
+                                        </div> <!-- .pricing-body -->
+
+                                        <footer class="pricing-footer">
+                                            <a class="select" href="#0">Select</a>
+                                        </footer>  <!-- .pricing-footer -->
+                                    </li>
+
+                                    <li data-type="yearly" class="is-hidden">
+                                        <header class="pricing-header">
+                                            <h2>Premier</h2>
+
+                                            <div class="price">
+                                                <span class="currency">$</span>
+                                                <span class="value">950</span>
+                                                <span class="duration">yr</span>
+                                            </div>
+                                        </header> <!-- .pricing-header -->
+
+                                        <div class="pricing-body">
+                                            <ul class="pricing-features">
+                                                <li><em>1024MB</em> Memory</li>
+                                                <li><em>5</em> Users</li>
+                                                <li><em>10</em> Websites</li>
+                                                <li><em>10</em> Domains</li>
+                                                <li><em>Unlimited</em> Bandwidth</li>
+                                                <li><em>24/7</em> Support</li>
+                                            </ul>
+                                        </div> <!-- .pricing-body -->
+
+                                        <footer class="pricing-footer">
+                                            <a class="select" href="#0">Get Started</a>
+                                        </footer>  <!-- .pricing-footer -->
+                                    </li>
+                                </ul> <!-- .pricing-wrapper -->
+                            </li>
+                        </ul> <!-- .pricing-list -->
+                    </div> <!-- .pricing-container -->  
+
             </div>
         </div>    
     </div>    
@@ -285,32 +544,31 @@
     <script type="text/javascript" src="js/wow.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script>
-        var nav = $('.subBar');
-        if (nav.length) {
-        var fixmeTop = nav.offset().top -72;
-        $(window).scroll(function () {
-            var currentScroll = $(window).scrollTop();
-            if (currentScroll >= fixmeTop) {
-                $('.subBar').addClass('animated enter-down');
-                $('.subBar').removeClass('animated exit-up');
-                $('.subBar').css({
-                    visibility: 'visible',
-                    position: 'fixed',
-                    top: '0',
-                    opacity: '1'
-                });
-            } else {
-                $('.subBar').removeClass('animated enter-down');
-                $('.subBar').addClass('animated exit-up');
-                $('.subBar').css({
-                    visibility: 'hidden',
-                    position: 'absolute'
-                });
-            }
-        });
+
+$(function() {
+  
+    // Toggle Nav on Click
+    $('.toggle-nav').click(function() {
+        // Calling a function in case you want to expand upon this.
+        toggleNav();
+    });
+
+  
+});
+
+function toggleNav() {
+    if ($('#site-wrapper').hasClass('show-nav')) {
+        // Do things on Nav Close
+        $('#site-wrapper').removeClass('show-nav');
+    } else {
+        // Do things on Nav Open
+        $('#site-wrapper').addClass('show-nav');
     }
-    </script>
-    
+}
+</script>
+   
+
+  
 
 
 
