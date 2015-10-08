@@ -11,13 +11,9 @@
     <title>Enterprise</title>  
 </head>
 <body>  
-<div id="site-wrapper"> 
-    <div class="mobile-nav">
-        <header>
-           <a href="#" class="toggle-nav"><img src="http://placehold.it/100x100"/></a>
-          {% include 'includes/nav.html' %} 
-        </header>
-    </div>     
+    <div id="scotch-panel">
+         {% include 'includes/nav.html' %} 
+    </div>  
 
 <main class="content">  
     <div class="m-nav">
@@ -26,8 +22,8 @@
                 <div class="logo-contain">    
                     <img class="logo" src="img/logo.svg"/>
                 </div> 
-                 
-                <a href="#" class="toggle-nav"><i class="fa fa-bars"></i></a>
+                <!--<a href="#" class="toggle-nav"><i class="fa fa-bars"></i></a>-->
+                <a href="#" class="toggle-panel"><i class="fa fa-bars"></i></a>
             </nav>
         </div>
     </div>
@@ -39,7 +35,8 @@
                     <a href="#0" class="logo-link">
                         <img class="logo" src="img/color-logo.svg"/>
                     </a>
-                    {% include 'includes/nav.html' %}   
+                    {% include 'includes/nav.html' %}  
+                    <h2>nav</h2> 
                 </nav>
             </div>
         </div>                
@@ -52,11 +49,11 @@
             <div class="full-width absolute">    
                 <div class="maxer clearfix">
                     <nav>
-                        <img class="logo" src="img/logo.svg"/>
-                         
-                    
+                        <a href="http://movius.svehaus.com">
+                            <img class="logo" src="img/logo.svg"/>
+                        </a>    
+                        {% include 'includes/nav.html' %} 
                     </nav>
-
                 </div>
             </div>    
             <div class="flex">
@@ -65,91 +62,88 @@
                         <h1 class="fancy">Providing complete solutions, and industry leading applications</h1>
                         <a href="#0" class="btn get-started">Learn More</a>
                         <a href="#cta" class="btn sign-up">Get Started</a>
-                           
                     </div>
                 </div>
             </div> 
         </div>             
     </div>
-   
-    <div class="full-width stripe-sml partners" style="background-color:#fff;">
-        <h4 style="color:#999">We partner with the best to deliver superior value </h4>
-        <img src="img/partnerlogos.jpg"/>
-    </div> 
-   
+    
+<!--
+    <div class="case-studies full-width">
+        <div class="container">
+            
+                <img src="img/casestudy.svg"/>
+                <img src="img/casestudy.svg"/>
+            
+       
+            <a href="#0" class="btn view-case-studies">Case Studies</a>
+        </div>
+    </div>    
+-->   
 
      
 
     <div class="features full-width">
         <div class="container stripe-med">
             <div class="clearfix inner-med">
-                <h1 class="fancy center heading1">Enterprise Features</h1>
-                <div class="item">
-                    <div class="col-md-4">
-                        <div class="img-contain">
-                            <img src="img/feature1.svg"/>
-                        </div>    
-                    </div>
-                    <div class="col-md-8">    
-                        <h4>Data Reporting</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
-                    </div>    
-                </div>
-                <div class="item">
-                    <div class="col-md-4">
-                        <div class="img-contain">
-                            <img src="img/feature7.svg"/>
-                        </div>    
-                    </div>
-                    <div class="col-md-8">    
-                        <h4>Infinite User Accounts</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
-                    </div>    
-                </div>
-                <div class="item">
-                    <div class="col-md-4">
-                        <div class="img-contain">
-                            <img src="img/feature3.svg"/>
-                        </div>    
-                    </div>
-                    <div class="col-md-8">    
-                        <h4> Multiplatform Messaging</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
-                    </div>    
-                </div>
-                <div class="item">
-                    <div class="col-md-4">
-                        <div class="img-contain">
-                            <img src="img/feature4.svg"/>
-                        </div>    
-                    </div>
-                    <div class="col-md-8">    
-                        <h4>Advanced Analytics</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
-                    </div>    
-                </div>
-                <div class="item">
-                    <div class="col-md-4">
-                        <div class="img-contain">
-                            <img src="img/feature5.svg"/>
+                <div class="row row-centered">
+                    <h1 class="fancy center heading1">Enterprise Features</h1>
+                    <div class="col-centered item col-sm-6 col-md-6">
+                        <div class="col-md-4">
+                            <div class="img-contain">
+                                <img src="img/feature6.svg"/>
+                            </div>    
                         </div>
-                    </div>
-                    <div class="col-md-8">    
-                        <h4>Fast Secure Messaging</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
-                    </div>    
-                </div>
-                <div class="item">
-                    <div class="col-md-4">
-                        <div class="img-contain">
-                            <img src="img/feature6.svg"/>
+                        <div class="details col-md-8">    
+                            <h4>Speed Optimization</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
                         </div>    
                     </div>
-                    <div class="col-md-8">    
-                        <h4>Speed Optimization</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
-                    </div>    
-                </div>
+                    <div class="col-centered item col-sm-6 col-md-6">
+                        <div class="col-md-4">
+                            <div class="img-contain">
+                                <img src="img/feature6.svg"/>
+                            </div>    
+                        </div>
+                        <div class="details col-md-8">    
+                            <h4>Speed Optimization</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
+                        </div>    
+                    </div>
+                    <div class="col-centered item col-sm-6 col-md-6">
+                        <div class="col-md-4">
+                            <div class="img-contain">
+                                <img src="img/feature6.svg"/>
+                            </div>    
+                        </div>
+                        <div class="details col-md-8">    
+                            <h4>Speed Optimization</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
+                        </div>    
+                    </div>
+                    <div class="col-centered item col-sm-6 col-md-6">
+                        <div class="col-md-4">
+                            <div class="img-contain">
+                                <img src="img/feature6.svg"/>
+                            </div>    
+                        </div>
+                        <div class="details col-md-8">    
+                            <h4>Speed Optimization</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
+                        </div>    
+                    </div>
+                    <div class="col-centered item col-sm-6 col-md-6">
+                        <div class="col-md-4">
+                            <div class="img-contain">
+                                <img src="img/feature6.svg"/>
+                            </div>    
+                        </div>
+                        <div class="col-md-8">    
+                            <h4>Speed Optimization</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
+                        </div>    
+                    </div>
+                </div>    
             </div>
         </div>    
     </div>  
@@ -245,46 +239,49 @@
         </div>
     </div> 
        
-    <div class="container stripe-lrg calculator">
-        <div class="maxer clearfix">
-            <div class="row">
-                <h1 class="fancy">The ROI of Split Billing</h1>
-                    <p>Split billing has the ability to transform your Telecom Expense Management process. By getting an accurate per-employee report for wor-related voice, messaging and data consumption, an enterprise can greatly reduce costs and increase the bottom line.</p>
-                <form class="wow animated enter-left delay-7">
-                    
-                    <div class="col-md-5"> 
-                        <div class="form-field"><label for="stipend">Average Stipend Amount</label><input type="text" name="stipend" id="stipend"></div>
+    <div class="calculator" style="background-image:url(img/calculator-bg.jpg)">
+        <div class="dark-overlay">
+            <div class="row stripe-lrg">
+                <div class="maxer clearfix">
+                    <div class="row">
+                        <h1 class="fancy">The ROI of Split Billing</h1>
+                            <p>Split billing has the ability to transform your Telecom Expense Management process. By getting an accurate per-employee report for wor-related voice, messaging and data consumption, an enterprise can greatly reduce costs and increase the bottom line.</p>
+                        <form class="wow animated enter-left delay-7">
+                            
+                            <div class="col-md-5"> 
+                                <div class="form-field"><label for="stipend">Average Stipend Amount</label><input type="text" name="stipend" id="stipend"></div>
+                            </div>
+                            <div class="col-md-5">     
+                                <div class="form-field"><label for="employees">Number of Employees</label><input type="text" name="employees" id="employees"></div>
+                            </div>
+                            <div class="col-md-2">     
+                                 <div class="button" id="calculatebutton">
+                                    <a href="#0" class="btn calculate">Calculate <i class="fa fa-right-angle"></i></a>
+                                </div>
+                            </div>    
+                        </form>
                     </div>
-                    <div class="col-md-5">     
-                        <div class="form-field"><label for="employees">Number of Employees</label><input type="text" name="employees" id="employees"></div>
-                    </div>
-                    <div class="col-md-2">     
-                         <div class="button" id="calculatebutton">
-                            <a href="#0" class="btn calculate">Calculate <i class="fa fa-right-angle"></i></a>
-                        </div>
-                    </div>    
-                </form>
+                    <div class="calculate-results">    
+                        <div class="results-contain clearfix">
+                            <div class="col-md-4">    
+                                <h1 class="result1 animated fadeInUp" id="result1"></h1>
+                                <label class="fancy">Yearly Stipend Expense</label>
+                            </div>
+                            <div class="col-md-4">    
+                                <h1 class="result animated fadeInUp delay-3" id="result2"></h1>
+                                <label class="fancy">Yearly Stipend Expense with Movius</label>
+                            </div>
+                            <div class="col-md-4">    
+                                <h1 class="result animated fadeInUp delay-5" id="result3"></h1>
+                                <label class="fancy">Total Savings</label>
+                            </div>
+                        </div>    
+                        <a href="#0" class="btn how-it-works">How It Works</a>
+                        <a href="#0" class="btn recalc">Recalculate</a>
+                    </div> 
+                </div>  
             </div>
-            <div class="calculate-results">    
-                <div class="results-contain clearfix">
-                    <div class="col-md-4">    
-                        <h1 class="result1 animated fadeInUp" id="result1"></h1>
-                        <label class="fancy">Yearly Stipend Expense</label>
-                    </div>
-                    <div class="col-md-4">    
-                        <h1 class="result animated fadeInUp delay-3" id="result2"></h1>
-                        <label class="fancy">Yearly Stipend Expense with Movius</label>
-                    </div>
-                    <div class="col-md-4">    
-                        <h1 class="result animated fadeInUp delay-5" id="result3"></h1>
-                        <label class="fancy">Total Savings</label>
-                    </div>
-                </div>    
-                <a href="#0" class="btn how-it-works">How It Works</a>
-                <a href="#0" class="btn recalc">Recalculate</a>
-            </div> 
-        </div>           
-        
+        </div>            
     </div>
 
     <div id="cta" class="call-to-action clearfix">
@@ -542,30 +539,42 @@
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="js/wow.js"></script>
+    <script type="text/javascript" src="js/sidePanel.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script>
 
-$(function() {
-  
-    // Toggle Nav on Click
-    $('.toggle-nav').click(function() {
-        // Calling a function in case you want to expand upon this.
-        toggleNav();
-    });
+            $(function() {
 
-  
-});
+            // Toggle Nav on Click
+            $('.toggle-nav').click(function() {
+            // Calling a function in case you want to expand upon this.
+            toggleNav();
+            });
 
-function toggleNav() {
-    if ($('#site-wrapper').hasClass('show-nav')) {
-        // Do things on Nav Close
-        $('#site-wrapper').removeClass('show-nav');
-    } else {
-        // Do things on Nav Open
-        $('#site-wrapper').addClass('show-nav');
-    }
-}
-</script>
+
+            });
+
+            function toggleNav() {
+                if ($('#site-wrapper').hasClass('show-nav')) {
+                    // Do things on Nav Close
+                    $('#site-wrapper').removeClass('show-nav');
+                } else {
+                    // Do things on Nav Open
+                    $('#site-wrapper').addClass('show-nav');
+                }
+            }
+    </script>
+    <script>
+         $('#scotch-panel').scotchPanel({
+                    containerSelector: 'body',
+                    direction: 'right',
+                    duration: 300,
+                    transition: 'ease',
+                    clickSelector: '.toggle-panel',
+                    distanceX: '300px',
+                    enableEscapeKey: true
+                });
+    </script>
    
 
   

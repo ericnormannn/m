@@ -75,6 +75,21 @@ $(document).ready(function(){
   
   });
 
+  $('.clients-mobile-nav span').first().addClass('active-client');
+
+
+  $('.client-logo, .clients-mobile-nav span').click(function() {
+    var $this = $(this),
+        $siblings = $this.parent().children(),
+        position = $siblings.index($this);
+        
+    $('.client-unit').removeClass('active-client').eq(position).addClass('active-client');
+    $siblings.removeClass('active-client');
+    $this.addClass('active-client');
+  });
+
+
+
      $('.recalc').click(function(){
             $('.calculate-results').fadeOut().hide();
             $('.calculator form').addClass('enter-left').show();
@@ -97,6 +112,7 @@ $(document).ready(function(){
     });
 
     $('.launch-vid').click(function(){
+        $('.scotch-panel-wrapper').addClass('full-height');
         $('main').fadeOut(500);
         $('.vid-contain').fadeIn(700).addClass('enter-up is-visible').show();
         $('.modal').fadeIn(600).show();
@@ -106,6 +122,7 @@ $(document).ready(function(){
         $('.modal').fadeOut().hide();
         $('main').fadeIn();
         $('.vid-contain').removeClass('enter-up');
+        $('.scotch-panel-wrapper').removeClass('full-height');
         
     });
 

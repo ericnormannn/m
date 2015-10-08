@@ -196,7 +196,7 @@ form .errors {
   .calculator form textarea,
   .calculator form select {
     padding: 13px;
-    max-width: 88%;
+    max-width: 92%;
   }
 }
 
@@ -215,6 +215,7 @@ form .errors {
         background-color: transparent;
         border-radius: .25em;
         box-shadow: inset 0 1px 1px rgba(0,0,0,.08);
+        color: @brandPrimary;
         width: 94%;
         margin: 0 auto;
         margin-bottom: 1.5rem;
@@ -230,6 +231,11 @@ form .errors {
           width: 100%;
           margin: 0 auto;
           font-size: 1rem;
+
+          p {
+              font-size: 1.1rem;            
+          }
+
         }
 
         form input[type="text"]:focus,
@@ -243,5 +249,41 @@ form .errors {
 
 }
 
+.calculator {
+
+        form input[type=text], form input[type=email], form select, form textarea {
+          color: #fff;
+          font-size: 16px;
+          border: none;
+          background-color: rgba(255, 255, 255, 0.15);
+          border-radius: .25em;
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.08);
+          color: #fff;
+          margin: 0 auto 2rem;
+          padding: 13px;
+          max-width: 100%;
+          -webkit-transition: background-color 0.3s linear;
+          -moz-transition: background-color 0.3s linear;
+          transition: background-color 0.3s linear;
+          .mq-screen-md-min ({
+              margin-bottom: 1.5rem;
+              margin-left: 0;
+              padding: 13px;
+              max-width: 90%;
+          });
+        }
+
+        form input[type="text"]:focus,
+        form input[type="email"]:focus,
+        form textarea:focus,
+        form select:focus {
+            outline: none;
+            color: #fff;
+            background-color: rgba(255, 255,255, 0.4);
+            border-color: transparent;
+            box-shadow: 0 0 5px rgba(44, 151, 222, 0.2);
+        }
+
+}
 
 
