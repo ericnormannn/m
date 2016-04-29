@@ -1,0 +1,72 @@
+{% extends "_layout" %}
+{% block content %}
+	   
+<form method="post" accept-charset="UTF-8" class="stripe-xl">
+    {{ getCsrfInput() }}
+    <input type="hidden" name="action" value="entries/saveEntry">
+    <input type="hidden" name="redirect" value="{{siteUrl}}">
+    <input type="hidden" name="sectionId" value="3">
+    <input type="hidden" name="enabled" value="1">
+
+    {% macro errorList(errors) %}
+        {% if errors %}
+            <ul class="errors">
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endmacro %}
+
+    {% from _self import errorList %}
+
+     <div class="1">
+        <input id="title" type="text" placeholder="Add Event Name" name="title">
+        {%- if entry is defined %} value="{{ entry.title }}"{% endif -%}
+
+        {% if entry is defined %}
+            {{ errorList(entry.getErrors('title')) }}
+        {% endif %}
+
+    </div>
+
+    <div class="2">
+        {# You need to include the 'type' input to identify the matrix block type you are submitting #}
+        <div class="register-matrix" id="testId">
+            <input type="hidden" name="fields[eventTask][new1][type]" value="eventTask">
+        </div>
+        
+        
+        <div id="add-locations">
+            <div class="location segment clearfix">
+                <fieldset>
+                    <div>
+                        <input name="fields[eventTask][new1][fields][location]" id="location1" class="geocomplete" value="" type="text" placeholder="Location" />
+
+                        <input name="fields[eventTask][new1][fields][establishment]" id="establishment1" value="default" type="hidden"/>
+
+                        <input name="fields[eventTask][new1][fields][city]" id="city1" value="default" type="hidden"/>
+
+                        <input name="fields[eventTask][new1][fields][state]" id="state1" value="default" type="hidden"/>
+
+
+                        <input name="fields[eventTask][new1][fields][lat]" id="lat1" value="default" type="hidden"/>
+
+                        <input name="fields[eventTask][new1][fields][lng]" id="lng1" value="default" type="hidden"/>
+
+                    </div>
+                </fieldset>
+                <div><a href="#" class='remove-location'><i class="fa fa-times"></i></a></div>
+            </div>
+        </div>
+        <div>
+            <a href="#" class='add-location'>+</a>
+        <div>
+    </div>
+
+
+    <input class="mega-btn" type="submit" value="Publish">
+</form>
+
+                
+ {% endblock %}

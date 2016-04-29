@@ -1,0 +1,17 @@
+{% extends "_layout" %}
+
+{% if currentUser %}
+    {% redirect 'dashboard' %}
+{% endif %}
+
+{% block content %}
+    
+    <div class="social-login">
+        {% for provider in craft.social.getLoginProviders() %}
+            <a href="{{ craft.social.loginUrl(provider.handle, { redirect: 'dashboard' }) }}" class="login-btn" data-provider="{{ provider.handle }}">
+                <span class="fa fa-facebook"></span><span> Sign in with Facebook</span>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}
+

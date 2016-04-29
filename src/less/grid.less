@@ -1,4 +1,7 @@
-
+* {
+  box-sizing: border-box;
+}
+ 
 .clearfix:before,
 .clearfix:after,
 .dl-horizontal dd:before,
@@ -62,14 +65,19 @@
   .container {
     width: 750px;
   }
+  .services .container {
+    width: 94%;
+  }
 }
+
+
 @media (min-width: 992px) {
-  .container {
+  .services .container, .container {
     width: 970px;
   }
 }
 @media (min-width: 1200px) {
-  .container {
+  .services .container, .container {
     width: 1170px;
   }
 }

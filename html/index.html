@@ -1,48 +1,401 @@
-<!doctype html>
-<html lang="en" class="no-js">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/project.css">
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-  	
-	<title>Movius</title>
-</head>
-<body>	
+<!DOCTYPE html>
+<html>
 
-<div class="col-md-6">
-	<img src="http://placehold.it/500x500"/>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>
+        <!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
+        <link rel="stylesheet" href="css/project.css" />
+        <title>WHITEBOARD</title>
 
-<p>Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/royalslider.js"></script>
+        <script src="js/datepicker.js"></script>
 
-Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. 
+    </head>
+    
+<body class="animate-in">
+    <nav>
+        <img class="logo" src="http://placehold.it/120x60">
+        <a href="#0" class="btn pull-right show-order-details">Add Order</a>
+    </nav>
+    
+    <div class="add-order">
+        <form method="post" accept-charset="UTF-8">
+            <input type="hidden" name="action" value="entries/saveEntry">
+            <input type="hidden" name="sectionId" value="2">
+            <input type="hidden" name="enabled" value="1">
+            
+            <label for="title">Title</label>
+            <input id="title" type="text" name="title">
+            <label for="description">description</label>
+            <textarea id="body" name="fields[description]"></textarea>
+            <input type="submit" value="Publish">
+        </form>
+    </div>
 
-Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. 
+    <div class="order-details bottom-lrg clearfix">
+        <img class="close" src="img/close.svg">
+        <div class="container">
+            <form class="stripe-lrg clearfix">
+                <div class="load-details lower-med clearfix">
+                    <h1>Load Details</h1>
+                    <input data-remote-list="client.json" placeholder="Client" type="text" data-list-highlight="false" data-list-value-completion="true"/>
+                    <input type="text" value="" class="time" placeholder="Number of Units"/>
+                </div>
 
-Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet.</p> 
+                <div class="time-details lower-med clearfix">
+                    <div class="pickup"> 
+                        <h1>Pickup</h1>
+                        <input id="geocomplete" type="text" placeholder="Pickup Location" size="90" />
+                        <input type="text" id="indnap" name="h" value="" class="searchinput datepicker" placeholder="Pickup Date"/>
+                        <div class="select-time">
+                            <span class="placeholder">Select Time</span>
+                               <ul>
+                                    <li data-value="7 AM">7 AM</li>
+                                    <li data-value="8 AM">8 AM</li>
+                                    <li data-value="9 AM">9 AM</li>
+                                    <li data-value="10 AM">10 AM</li>
+                                    <li data-value="11 AM">11 AM</li>
+                                    <li data-value="12 AM">12 AM</li>
+                                    <li data-value="1 PM">1 PM</li>
+                                    <li data-value="2 PM">2 PM</li>
+                                    <li data-value="3 PM">3 PM</li>
+                                    <li data-value="4 PM">4 PM</li>
+                                    <li data-value="5 AM">5 PM</li>
+                              </ul>
+                              <input type="hidden" name="changeme"/>
+                        </div>
+                    </div>
 
-</div>
+                    <div class="dropoff">
+                        <h1>Dropoff</h1>
+                        <input id="geocomplete2" type="text" placeholder="Dropoff Location" size="90" />
+                        <input type="text" id="indnap" name="h" value="" class="searchinput datepicker2" placeholder="Departure Date"/>
+                        <div class="select-time">
+                            <span class="placeholder">Select Time</span>
+                                <ul>
+                                    <li data-value="7 AM">7 AM</li>
+                                    <li data-value="8 AM">8 AM</li>
+                                    <li data-value="9 AM">9 AM</li>
+                                    <li data-value="10 AM">10 AM</li>
+                                    <li data-value="11 AM">11 AM</li>
+                                    <li data-value="12 AM">12 AM</li>
+                                    <li data-value="1 PM">1 PM</li>
+                                    <li data-value="2 PM">2 PM</li>
+                                    <li data-value="3 PM">3 PM</li>
+                                    <li data-value="4 PM">4 PM</li>
+                                    <li data-value="5 AM">5 PM</li>
+                                </ul>
+                              <input type="hidden" name="changeme"/>
+                        </div>
 
-<div class="col-md-6">
-	<img src="http://placehold.it/500x500"/>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                    </div>
+                </div>
+                <div class="stripe-med center">
+                    <a href="#0" class="btn killpage">Submit Order</a>
+                </div>
+            </form>
+            <div id="zebracontainer1" class="zbc">
+            </div>
+            <div id="zebracontainer2" class="zbc">
+            </div>
 
-<p>Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. 
+            <!-- <div class="searchbox" >
+                <div class="flex">
+                    <div class="flex-item">
+                      <div class="searchslide search1 on">
+                        <form id="search" method="GET" action="" class="bbox"  accept-charset="utf-8">
+                            <img class="close" src="img/close.svg"/>
+                            <div class="flex">
+                                <div class="flex-item">
+                                    <div class="date-search-box clearfix">
+                                        <fieldset>
+                                          <div id="datepickbox1" class="datepickbox"><input type="text" id="indnap" name="h" value="" class="searchinput datepicker" placeholder="Arrive"/></div>
+                                        </fieldset>
+                                    
+                                        <fieldset class="lower_sml">
+                                          <div id="datepickbox2" class="datepickbox"><input type="text" id="indnap" name="h" value="" class="searchinput datepicker2" placeholder="Depart"/></div>
+                                        </fieldset>
 
-Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. 
+                                        <a class="btn">Book Room</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                          <div id="zebracontainer1" class="zbc">
+                          </div>
+                          <div id="zebracontainer2" class="zbc">
+                          </div>
+                      </div>
+                    </div>
+                </div>  
+            </div>
+ -->
+        </div>
+    </div>
+    
+    <section class="schedule">
+        <div class="schedule-nav next">
+            <a href="javascript:Schedule.next();">
+                <div class="flex">
+                    <div class="flex-item">
+                        <img src="img/icon-arrow.svg" alt="arrow" class="svg-raw"/>
+                    </div>
+                </div>
+            </a>
+        </div>
 
-Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. 
+        <div class="schedule-nav previous">
+            <a href="javascript:Schedule.previous();">
+                <div class="flex">
+                    <div class="flex-item">
+                        <img src="img/icon-arrow.svg" alt="arrow" class="svg-raw"/>
+                    </div>
+                </div>
+            </a>
+        </div>
 
-Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet.</p> 
+        <div class="container content-fade">
+            <div class="row">
+                <div class="schedule-slider">
+                    <div class="block driver">
+                        <div class="title">DRIVER</div>
+                        <div class="cell"><a href="#0">101</a></div>
+                        <div class="cell"><a href="#0">102</a></div>
+                        <div class="cell"><a href="#0">103</a></div>
+                        <div class="cell"><a href="#0">104</a></div>
+                        <div class="cell"><a href="#0">105</a></div>
+                        <div class="cell"><a href="#0">106</a></div>
+                        <div class="cell"><a href="#0">107</a></div>
+                    </div>
 
-</div>
+                    <div class="block">
+                        <div class="title">MONDAY</div>
+                        <!-- <a href="#0" class="cell"><a href="#0" class="highlight show-order-details">CLICK ME</a></a> -->
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"><span class="highlight on-time">From Here to There</span></div>
+                        <div class="cell"><span class="highlight on-time">From Here to There</span></div>
+                        <div class="cell"><span class="highlight span2 delayed">From Here to There</span></div>
+                        <div class="cell"><span class="highlight span3 on-time">Hola</span></div>
+                    </div>
+
+                    <div class="block">
+                        <div class="title">TUESDAY</div>
+                        <div class="cell"><span class="highlight on-hold">From Here to There</span></div>
+                        <div class="cell"><span class="highlight span2 delayed">From Here to There</span></div>
+                        <div class="cell"><span class="highlight on-time">From Here to There</span></div>
+                        <div class="cell"><span class="highlight on-hold">From Here to There</span></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+
+                    <div class="block">
+                        <div class="title">WEDNESDAY</div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"><span class="highlight on-time">From Here to There</span></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+
+                    <div class="block">
+                        <div class="title">THURSDAY</div>
+                        <div class="cell"><span class="highlight on-time">From Here to There</span></div>
+                        <div class="cell"></div>
+                        <div class="cell"><span class="highlight on-time">From Here to There</span></div>
+                        <div class="cell"><span class="highlight delayed">From Here to There</span></div>
+                        <div class="cell"><span class="highlight span2 on-hold">From Here to There</span></div>
+                        <div class="cell"></div>
+                    </div>
+
+                    <div class="block">
+                        <div class="title">FRIDAY</div>
+                        <div class="cell"><span class="highlight on-time">From Here to There</span></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+
+                    <div class="block">
+                        <div class="title">SATURDAY</div>
+                        <div class="cell"></div>
+                        <div class="cell"><span class="highlight delayed">From Here to There</span></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+
+                    <div class="block">
+                        <div class="title">SUNDAY</div>
+                        <div class="cell"></div>
+                        <div class="cell"><span class="highlight span2 on-hold">From Here to There</span></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+
+                    <div class="block">
+                        <div class="title">MONDAY</div>
+                        <!-- <a href="#0" class="cell"><a href="#0" class="highlight show-order-details">CLICK ME</a></a> -->
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"><span class="highlight on-time">From Here to There</span></div>
+                        <div class="cell"><span class="highlight on-time">From Here to There</span></div>
+                        <div class="cell"><span class="highlight span2 delayed">From Here to There</span></div>
+                        <div class="cell"><span class="highlight span3 on-time">Hola</span></div>
+                    </div>
+
+                    <div class="block">
+                        <div class="title">TUESDAY</div>
+                        <div class="cell"><span class="highlight on-hold">From Here to There</span></div>
+                        <div class="cell"><span class="highlight span2 delayed">From Here to There</span></div>
+                        <div class="cell"><span class="highlight on-time">From Here to There</span></div>
+                        <div class="cell"><span class="highlight on-hold">From Here to There</span></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+
+                    <div class="block">
+                        <div class="title">WEDNESDAY</div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"><span class="highlight on-time">From Here to There</span></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+
+                    <div class="block">
+                        <div class="title">THURSDAY</div>
+                        <div class="cell"><span class="highlight on-time">From Here to There</span></div>
+                        <div class="cell"></div>
+                        <div class="cell"><span class="highlight on-time">From Here to There</span></div>
+                        <div class="cell"><span class="highlight delayed">From Here to There</span></div>
+                        <div class="cell"><span class="highlight span2 on-hold">From Here to There</span></div>
+                        <div class="cell"></div>
+                    </div>
+
+                    <div class="block">
+                        <div class="title">FRIDAY</div>
+                        <div class="cell"><span class="highlight on-time">From Here to There</span></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+
+                    <div class="block">
+                        <div class="title">SATURDAY</div>
+                        <div class="cell"></div>
+                        <div class="cell"><span class="highlight delayed">From Here to There</span></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+
+                    <div class="block">
+                        <div class="title">SUNDAY</div>
+                        <div class="cell"></div>
+                        <div class="cell"><span class="highlight span2 on-hold">From Here to There</span></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
+        <script src="js/schedule.js"></script>
+        <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+        <script src="js/jquery.geocomplete.js"></script>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="js/main.js"></script>
+        <script src="js/polyfiller.js"></script>
+        <script src="js/remote-list.js"></script>
 
-</body>
+        <script src="js/main.js"></script>
+        <script>
+            $(function () {
+                $('input').remoteList({
+                    minLength: 0,
+                    maxLength: 4,
+                    
+                });
+            });
+        </script>
+
+        <script>
+          $(function(){
+                $("#geocomplete").geocomplete({
+                    details: "form",
+                    types: ["geocode", "establishment"],
+                });
+
+                $("#find").click(function(){
+                  $("#geocomplete").trigger("geocode");
+                });
+            
+                $("#examples a").click(function(){
+                  $("#geocomplete").val($(this).text()).trigger("geocode");
+                  return false;
+                });
+            });
+
+          $(function(){
+                $("#geocomplete2").geocomplete({
+                    details: "form",
+                    types: ["geocode", "establishment"],
+                });
+
+                $("#find").click(function(){
+                  $("#geocomplete2").trigger("geocode");
+                });
+            
+                $("#examples a").click(function(){
+                  $("#geocomplete2").val($(this).text()).trigger("geocode");
+                  return false;
+                });
+            });
+
+
+        </script>
+
+        <script>
+            $('.show-order-details').on('click', function(){
+                $('.schedule').fadeOut();
+                $('.order-details').fadeIn();
+
+            });
+
+            $('.show-add-order').on('click', function(){
+                $('.add-order').fadeIn();
+            });
+
+            $('.close').click(function() {
+                $('.order-details').fadeOut();
+                $('.schedule').fadeIn();
+            }); 
+
+            $('.killpage').click(function() {
+                $('body').fadeOut(500);
+            });
+        </script>
+        
+    </body>
+
 </html>

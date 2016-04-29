@@ -1,0 +1,81 @@
+{% requireLogin %}
+
+{% extends "_layout" %}
+{% block content %}
+ 
+    {% if user.photoUrl %}
+        {% set photoUrl = user.photoUrl %}
+    {% else %}
+      
+    {% endif %}	
+	<div class="content" id="index-content">
+        <header>
+        	<div class="container">
+		       	<a href="#0" class='event' id='schedule'><img src="../html/img/calendar.svg"/></a>
+		       	<a href="#0" class='event' id='messages'><img src="../html/img/message.svg"/></a>
+		       	<a href="#0" class='event' id='map'><img src="../html/img/location.svg"/></a>
+		   	</div>
+	    </header>
+
+	    <div id='schedulecontent' class='event-content'>
+	    	<div class="stripe-lrg">
+	    		<div class="container">
+			    	
+					{% for pin in entry.eventTask %}
+                        <div class="segment" >
+                            <p>{{pin.time}}</p>
+                            <a href="">Get Directions</a>
+                            <h2>{{pin.location}}</h2>
+                            <span class="lat">{{pin.lat}}</span>
+                            <span class="lng">{{pin.lng}}</span>
+                            <span class="city">{{pin.city}}</span>
+                            <span class="state">{{pin.state}}</span>
+                        </div>
+                    {% endfor %}
+
+			    </div>
+		    </div>
+        </div>
+
+
+
+
+        <div id='messagescontent' class='event-content'>
+        	<div id="chat">	
+				<input id="userName" value="{{currentUser.firstName}}" type="hidden">
+				<input id="currentUser" value="{{currentUser.id}}" type="hidden">
+				<input id="userImage" value="{{ photoUrl }}" type="hidden">
+
+
+				<ul id='example-messages' class="example-chat-messages">
+					<!-- all the messages in here -->
+				</ul>
+
+				<footer>
+					<div class="container">
+						<div class="flex">
+							<div class="flex-item">
+								<textarea type='text' id='messageInput'  placeholder='New Message'></textarea>
+								<button>Send</button>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</div>
+        </div>
+
+        
+        
+        <div id='mapcontent' class='event-content'>
+        	<section id="cd-google-map">
+				<div id="google-container"></div>
+				<div id="cd-zoom-in"></div>
+				<div id="cd-zoom-out"></div>
+			</section>
+        </div>
+    </div>
+
+	
+
+
+{% endblock %}

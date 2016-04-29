@@ -3,268 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/project.css">
-    <link rel="stylesheet" href="css/map.css">
-
-    <script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/reset.css"> 
+    <link rel="stylesheet" href="css/project.css"> 
+    <script src="js/modernizr.js"></script> 
     
-    <title>Contact</title>
+    <title>Arete Development Group</title>
 </head>
-<body>  
-     <div class="subBar">
-        <div class="full-width">    
-            <div class="maxer clearfix">
-                <nav>
-                    <img class="logo" src="img/color-logo.svg"/>
-                    <ul>
-                        <li><a href="#0">Carriers / Operators</a></li>
-                        <li><a href="#0">Enterprise</a></li>
-                        <li><a href="#0">Company</a></li>
-                        <li><a href="#0">Contact</a></li>
-                        <li class="login"><a href="#0">Log in / Register</a></li>
-                    </ul>    
-                </nav>
-            </div>
-        </div>                
-    </div> 
-    <div class="page-hero" style="background-image:url(img/calc.png)">
-        <div class="full-width absolute">    
-            <div class="maxer clearfix">
-                <nav>
-                    <img class="logo" src="img/logo.svg"/>
-                    <ul>
-                        <li><a href="#0">Carriers / Operators</a></li>
-                        <li><a href="#0">Enterprise</a></li>
-                        <li><a href="#0">Company</a></li>
-                        <li><a href="#0">Contact</a></li>
-                        <li class="login"><a href="#0">Log in / Register</a></li>
-                    </ul>    
-                </nav>
-            </div>
-        </div>    
-        <div class="flex">
-            <div class="flex-item">
-                <div class="maxer clearfix enterprise">
-                    <h1 class="fancy">Calculate your Company's return on investment with Movius</h1>
-                    <a href="#cta" class="btn how-it-works">How it Works</a>
+<body>
+    <header>
+        <a id="logo" href="#0"><img src="img/logo.png" alt="Homepage"></a>
+        <a id="menu-trigger" href="#0"><span class="menu-text">Menu</span><span class="menu-icon"></span></a>
+    </header>
+
+    <main class="main-content clearfix">
+        <section class="img-header">
+            <div class="overlay">
+                <div class="flex">
+                    <div class="flex-item">    
+                        <h1>Advising</h1>
+                    </div>
                 </div>
             </div>
-        </div>        
-    </div>
-   
-    <div class="container stripe-lrg text-well">
-        <div class="maxer clearfix">
-            <div class="row">
-                <div class="col-md-8">
-                   <h3>Movius is a leading provider of converged messaging and call completion solutions for telecommunication providers around the world.</h3>
-    <p>Its real-time applications for converged messaging and mobile identities can be used on any device and across any network. Movius’ applications for converged messaging, and mobile identities level the playing field for mobile operators by allowing them to offer services using the same business models offered by OTT providers. In doing so, it helps them to increase ARPU and widen their market share.</p>
+            <div class="hero" style="background-image:url('img/desk.jpg')">
+            </div>
+        </section>
 
-    <p>Over 150 of the world’s leading MVNOs, enterprises and service providers leverage Movius’ mobile applications to address the security, privacy and billing issues associated with corporate BYOD/CYOD programs. Movius’ solutions are also currently integrated with partner solutions, including Samsung KNOX, OpenPeak ADAM, and Cellrox Multi Persona.</p>
+        <section class="stripe-med heading-block">
+            <div class="container">
+                <h1>Nation Building Strategies</h1>
+                <p class="sub-header">Tribal nations have unique needs. What separates Areté Development Group, LLC from the ordinary is the connection between Nation Building Strategies that reflect a vision and actionable steps. Areté will energize to lead, helping bridge the gap between where you are… and where you need to be!</p>
+            </div>  
+            
+            <div class="stripe-sml">
+                {% macro errorList(errors) %}
+                    {% if errors %}
+                        <ul class="errors">
+                            {% for error in errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endmacro %}
+
+                {% from _self import errorList %}
+
+                <form method="post" action="" accept-charset="UTF-8" class="contact">
+                    {{ getCsrfInput() }}
+                    <input type="hidden" name="action" value="contactForm/sendMessage">
+                    <input type="hidden" name="redirect" value="contact/thanks">
+
+                    <h3><label for="fromName">Your Name</label></h3>
+                    <input id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
+                    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+
+                    <h3><label for="fromEmail">Your Email</label></h3>
+                    <input id="fromEmail" type="text" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}">
+                    {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+
+                    <h3><label for="subject">Subject</label></h3>
+                    <input id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
+                    {{ message is defined and message ? errorList(message.getErrors('subject')) }}
+
+                    <h3><label for="message">Message</label></h3>
+                    <textarea rows="6" cols="20" id="message" name="message">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
+                    {{ message is defined and message ? errorList(message.getErrors('message')) }}
+
+                    <input type="submit" value="Get In Touch" class="btn-primary">
+                </form>
+            </div>
+        </section>   
+
+
+        <footer>
+            <div class="stripe-xs">
+                <div class="container">
+                    <div class="contact">
+                        <span class="copyright">&copy; 2016 Arete Development Group</span>    
+                        <a href="tel:1-406-370-4593">
+                            406.370.4593
+                        </a>
+                        <a href="https://www.google.com/maps/place/605+Preston+St,+Missoula,+Mt+59804/@46.8668943,-114.050979,18.95z/data=!4m2!3m1!1s0x535dce0409d6d547:0x15009fd884d9465e" target="_blank">    
+                            605 Preston Street Missoula, MT 59804 
+                        </a>
+                    </div>
+                    <div class="social">
+                        <ul class="social-icons">
+                            <li><a href="https://www.facebook.com/AreteDG" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/jason-campbell-242aba36" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div> 
-        </div>           
-    </div>
-
-<!--
-    <div class="locations clearfix">
-        <div class="locations-contain">
-            <a href="#0" class="location-item">
-                <div class="flex">
-                    <div class="flex-item">
-                        <h4>1</h4>
-                        <div class="contact-details">
-                            
-                            <img style="position:absolute; top:0;" class="close" src="img/close.svg">
-                            
-                            <p class="animated fadeInUp">Over 150 of the world’s leading MVNOs, enterprises and service providers leverage Movius’ mobile applications to address the security, privacy and billing issues</p>
-                        </div>
-                    </div>    
-                </div>    
-            </a>
-
-            <a href="#0" class="location-item">
-                <div class="flex">
-                    <div class="flex-item">
-                        <h4>2</h4>
-                        <div class="contact-details">
-                            <p class="wow animated" data-wow-delay="0.5s" data-wow-duration="0.4s">Over 150 of the world’s leading MVNOs, enterprises and service providers leverage Movius’ mobile applications to address the security, privacy and billing issues</p>
-                        </div>
-                    </div>    
-                </div>    
-            </a>
-
-            <a href="#0" class="location-item">
-                <div class="flex">
-                    <div class="flex-item">
-                        <h4>3</h4>
-                        <div class="contact-details">
-                            <p class="wow animated" data-wow-delay="0.5s" data-wow-duration="0.4s">Over 150 of the world’s leading MVNOs, enterprises and service providers leverage Movius’ mobile applications to address the security, privacy and billing issues</p>
-                        </div>
-                    </div>    
-                </div>    
-            </a>
-
-            <a href="#0" class="location-item">
-                <div class="flex">
-                    <div class="flex-item">
-                        <h4>4</h4>
-                        <div class="contact-details">
-                            <p class="wow animated" data-wow-delay="0.5s" data-wow-duration="0.4s">Over 150 of the world’s leading MVNOs, enterprises and service providers leverage Movius’ mobile applications to address the security, privacy and billing issues</p>
-                        </div>
-                    </div>    
-                </div>    
-            </a>
-
-            <a href="#0" class="location-item">
-                <div class="flex">
-                    <div class="flex-item">
-                        <h4>5</h4>
-                        <div class="contact-details">
-                            <p class="wow animated" data-wow-delay="0.5s" data-wow-duration="0.4s">Over 150 of the world’s leading MVNOs, enterprises and service providers leverage Movius’ mobile applications to address the security, privacy and billing issues</p>
-                        </div>
-                    </div>    
-                </div>    
-            </a>
-
-        </div>
-    </div>
--->
-
-<section class="contact clearfix stripe-med">
-            <h4>Movius Offices</h4>
-            <p>We are located in Atlanta, Dubai, Madrid, Bangalore and Johannesburg.</p>
-            <div class="hq contact-item col-md-6" style="background-image:url(http://placehold.it/500x500)">   
-                <div class="contact-overlay">
-                    <h1>YES</h1>
-                </div>
-            </div>    
-
-            <div class="col-md-3 contact-item" style="background-image:url(http://placehold.it/500x500)">  
-                <h1 class="fancy">Global</h1>
-                <h4>Dubai, UAE</h4>
-
-                <p>Business Central Towers</p>
-                <p>Tower A</p>
-                <p>Office Number: 1203A</p>
-                <p>Dubai Media City, UAE</p>
-
-                <p>Tel: +971 4 304 2561</p>
-                <p>Fax: +971 4 304 2562</p>
-            </div>    
-        <div class="col-md-3 contact-item" style="background-image:url(http://placehold.it/500x500)">  
-            Madrid, Spain
-
-            Av. Europa, 14
-            28108 Alcobendas/Madrid
-            Spain
-
-            Tel: +34 91 1890510
-            Fax: +34 91 6625019
-        </div>
-
-        <div class="col-md-3 contact-item" style="background-image:url(http://placehold.it/500x500)"> 
-            Bangalore, India
-
-            Movius Software Pvt. Ltd.,
-            No. 11, “Abhaya Heights”,
-            7th Floor, JP Nagar 3rd Phase,
-            Bannerghatta Main Road,
-            Bengaluru, Karnataka, India, 560078
-            Tel: +91-80-4252 4444
-        </div>
-
-        <div class="col-md-3 contact-item" style="background-image:url(http://placehold.it/500x500)"> 
-            Johannesburg, South Africa
-
-            Physical Address:
-            The Crescent East
-            Unit B5
-            3 Eglin Road
-            Sunninghill 2157 Gauteng, South Africa
-
-            Postal Address:
-            PostNet Suite #304
-            Private Bag X43
-            Sunninghill 2157 Gauteng, South Africa
-
-            Tel: +27 11 807 7976
-            Fax: +27 11 807 8629
-        </div>
-    </div>    
-</section>
-
-
-
-    <footer class="stripe-med clearfix">
-        <div class="maxer clearfix">
-            <div class="col-md-1">
-                <img class="logo" src="img/color-logo.svg"/>
             </div>
-            <div class="col-md-2">
-                <ul>
-                    <li><a href="#0">Carriers / Operators</a></li>
-                    <li><a href="#0">App Development</a></li>
-                    <li><a href="#0">App Integration</a></li>
-                    <li><a href="#0">myIdentities</a></li>
-                    <li><a href="#0">Virtual Receptionist</a></li>
-                    <li><a href="#0">Voicemail</a></li>
-                </ul>
-            </div>
-            <div class="col-md-2">
-                <ul>
-                    <li><a href="#0">Enterprise</a></li>
-                    <li><a href="#0">Features</a></li>
-                    <li><a href="#0">Pricing</a></li>
-                    <li><a href="#0">ROI Calculator</a></li>
-                    <li><a href="#0">Item</a></li>
-                </ul>
-            </div>
-            <div class="col-md-2">
-                <ul>
-                    <li><a href="#0">Support</a></li>
-                    <li><a href="#0">Technical Support</a></li>
+        </footer>   
+    </main> 
+
+    <nav id="lateral-nav">
+        <ul class="navigation">
+            <li class="item-has-children">
+                <a href="#0">Services</a>
+                <ul class="sub-menu">
+                    <li><a href="#0">Advising</a></li>
                     <li><a href="#0">Training</a></li>
-                    <li><a href="#0">Resources</a></li>
+                    <li><a href="#0">Research</a></li>
                 </ul>
-            </div>
-            <div class="col-md-2">
-                <ul>
-                    <li><a href="#0">Company</a></li>
-                    <li><a href="#0">News / Blog</a></li>
-                    <li><a href="#0">Careers</a></li>
-                    <li><a href="#0">Investors / Partners</a></li>
-                    <li><a href="#0">About</a></li>
+            </li> 
+
+            <li class="item-has-children">
+                <a href="#0">Resources</a>
+                <ul class="sub-menu">
+                    <li><a href="#0">Business Plan</a></li>
+                    <li><a href="#0">Finance and Money</a></li>
+                    <li><a href="#0">Endoresements</a></li>
                 </ul>
-            </div>
-            <div class="col-md-3">
-                <ul>
-                    <li><a href="#0">Get In Touch</a></li>
-                    <li><a href="#0">Contact Us</a></li>
-                    <ul class="social">
-                        <li><a href="#0"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#0"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#0"><i class="fa fa-youtube"></i></a></li>
-                        <li><a href="#0"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>    
+            </li> 
+        </ul> 
 
-                </ul>
-            </div>
-        </div>    
-    </footer>
+        <ul class="navigation single-item-wrapper">
+            <li><a href="#0">About</a></li>
+            <li><a href="#0">Contact</a></li>
+        </ul> 
 
-</div>  
-   
-
-
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <!--<script type="text/javascript" src="js/wow.js"></script>-->
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/map.js"></script>
-   
+        <div class="navigation socials">
+            <a href="#0"><i class="fa fa-facebook"></i></a>
+            <a href="#0"><i class="fa fa-linkedin"></i></a>
+        </div>
+    </nav>
     
-
-
-
-</body></html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/main.js"></script> 
+</body>
+</html>

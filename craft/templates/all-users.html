@@ -1,0 +1,12 @@
+{% extends "_layout" %}
+{% block content %}
+
+{% for person in craft.users  %}
+    <p>{{person.name}}</p>
+    <p>{{person.id}}</p>
+{% endfor %}
+
+       
+
+                
+{% endblock %}

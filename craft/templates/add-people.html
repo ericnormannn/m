@@ -1,0 +1,88 @@
+{% extends "_layout" %}
+{% block content %}
+	   
+<form method="post" accept-charset="UTF-8" class="stripe-xl">
+    {{ getCsrfInput() }}
+    <input type="hidden" name="action" value="entries/saveEntry">
+    <input type="hidden" name="redirect" value="{{siteUrl}}">
+    <input type="hidden" name="sectionId" value="3">
+    <input type="hidden" name="enabled" value="1">
+
+    {% macro errorList(errors) %}
+        {% if errors %}
+            <ul class="errors">
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endmacro %}
+
+    {% from _self import errorList %}
+
+    <!-- <div class="1">
+        <input id="title" type="text" placeholder="Add Event Name" name="title">
+        {%- if entry is defined %} value="{{ entry.title }}"{% endif -%}
+
+        {% if entry is defined %}
+            {{ errorList(entry.getErrors('title')) }}
+        {% endif %}
+
+        {# testing autocomplete #}
+        <input id="geocomplete" type="text" placeholder="Location" size="90" />
+    </div> -->
+
+    <div class="2 segment">
+        {# You need to include the 'type' input to identify the matrix block type you are submitting #}
+        <div class="register-matrix" id="testId">
+            <input type="hidden" name="fields[eventTask][new1][type]" value="eventTask">
+        </div>
+        
+        <input data-remote-list="../public/users.json" placeholder="Add People" class="add-people" type="text" data-list-highlight="false" data-list-value-completion="true"/>
+        
+        <div>
+    </div>
+
+
+
+    
+
+
+    {# You need to include the 'type' input to identify the matrix block type you are submitting #}
+  <!--   <input type="hidden" name="fields[eventTask][new1][type]" value="eventTask">
+    <input type="hidden" name="fields[eventTask][new2][type]" value="eventTask"> -->
+
+    {# All of your custom fields must be within a 'fields' array. #}
+<!--     <input id="geocomplete" type="text" size="90" placeholder="location" name="fields[eventTask][new1][fields][location]">
+ 
+    <input id="geocomplete2" type="text" placeholder="location2" name="fields[eventTask][new2][fields][location]">
+        
+    
+
+    <div class="select-time">
+        <span class="placeholder">Select Time</span>
+            <ul>
+                <li value="1" name="fields[eventTask][new1][fields][time]">1</li>
+                <li value="2" name="fields[eventTask][new1][fields][time]">2</li>
+                <li value="3" name="fields[eventTask][new1][fields][time]">3</li>
+            </ul>
+          <input type="hidden" name="changeme"/>
+    </div> --> 
+
+    <!-- <select name="message[gender]">
+        <option value="——" selected="selected">Select One</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select> -->
+
+    {# For New Entries, you'll want to use the naming convention 'new1', 'new2', 'new3' for each of your blocks.  For existing entries you can update those values to be the block IDs #}
+   <!--  <input type="text" name="fields[contact][new2][fields][contactname]">
+    <input type="text"  name="fields[contact][new2][fields][contactemail]" >
+    <input type="text" name="fields[contact][new2][fields][contactphone]" > -->
+
+
+    <input class="mega-btn" type="submit" value="Publish">
+</form>
+
+                
+ {% endblock %}

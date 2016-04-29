@@ -1,0 +1,82 @@
+{% if not currentUser %}
+    {% redirect 'login' %}
+{% endif %}
+
+{% extends "_layout" %}
+
+{% set selectedNav = 'profile' %}
+
+{% block content %}
+
+    {# Account Errors #}
+
+    {% if account is defined %}
+        {% set accountErrors = account.errors %}
+
+        {% if accountErrors %}
+            <div class="alert alert-danger">
+                {% for accountError in accountErrors %}
+                    <p>{{(accountError|first)}}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endif %}
+
+    <h2>What up, {{currentUser.firstName}}.</h2>
+
+    {# Photo #}
+
+    <form method="post" enctype="multipart/form-data">
+
+        <input type="hidden" name="action" value="users/saveUser">
+        <input type="hidden" name="redirect" value="profile">
+        <input type="hidden" name="userId" value="{{ user.id }}">
+
+        {% if user.photoUrl %}
+            {% set photoUrl = user.photoUrl %}
+        {% else %}
+            {% set photoUrl = resourceUrl('social/images/defaultuser.svg') %}
+        {% endif %}
+
+        <img src="{{ photoUrl }}" class="img-responsive img-rounded" />
+    
+        <label for="userPhoto">{{ (user.photoUrl ? 'Change Photo' : 'Upload Photo') }}</label><br />
+        <p>
+            <input type="file" name="userPhoto" value="{{ (user.photoUrl ? 'Change Photo' : 'Upload') }}">
+        </p>
+
+        <input type="submit" class="btn btn-sm btn-primary" value="Upload Photo">
+
+        {% if user.photoUrl %}
+            <!-- <input type="submit" class="btn btn-sm btn-danger" name="deleteUserPhoto" value="Delete Photo"> -->
+        {% endif %}
+    </form>
+
+    <hr>
+
+    {# Profile #}
+
+    <form method="post" enctype="multipart/form-data">
+
+        <input type="hidden" name="action" value="users/saveUser">
+        <input type="hidden" name="redirect" value="profile">
+        <input type="hidden" name="userId" value="{{ user.id }}">
+
+       
+        <label for="firstName">First Name</label>
+        <input type="text"  class="form-control" id="firstName" name="firstName" value="{{ user.firstName }}">
+
+        <label for="lastName">Last Name</label>
+        <input type="text"  class="form-control" id="lastName" name="lastName" value="{{ user.lastName }}">
+               
+        <label for="username">Username</label>
+        <input type="text"  class="form-control" id="username" name="username" value="{{ user.username }}">
+
+        
+        <label for="email">Email</label>
+        <input type="text"  class="form-control" id="email" name="email" value="{{ user.email }}" data-current-email="{{ user.email }}" readonly="true" />
+
+        <input type="submit" class="btn btn-primary" value="Save">
+    </form>
+
+{% endblock %}

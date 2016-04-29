@@ -1,0 +1,66 @@
+{% extends "social/_layouts/cp" %}
+
+{% set selectedTab = 'loginAccounts' %}
+
+{% set content %}
+
+    {% if loginAccounts|length > 0 %}
+
+        <table class="data fullwidth">
+            <thead>
+                <tr>
+                    <th>{{ "Username"|t }}</th>
+                    <th>{{ "Full Name"|t }}</th>
+                    <th>{{ "OAuth Provider"|t }}</th>
+                    <th>{{ "Social User ID"|t }}</th>
+                    <th>{{ "Last login"|t }}</th>
+                </tr>
+            </thead>
+
+            {% for account in loginAccounts %}
+
+                {% set user = account.user %}
+                {% set oauthProvider = craft.oauth.getProvider(account.providerHandle) %}
+
+                {% if oauthProvider %}
+                    <tr>
+                        <td>
+                            <span class="status{% if user.status == 'active' %} {{ user.status }}{% endif %}"></span>
+
+                            <div class="socialthumb">
+                                <img src="{{ user.getThumbUrl(40) }}" />
+                            </div>
+
+                            <a href="{{ url('social/loginaccounts/'~user.id) }}">{{ user.username }}</a>
+                        </td>
+                        <td>{{ user.fullName }}</td>
+                        <td class="provider">
+                            <img src="{{ oauthProvider.getIconUrl() }}" class="social-icon social-{{ oauthProvider.handle }}" />{{ oauthProvider.name }}
+                        </td>
+                        <td>
+                            {{ account.socialUid }}
+                        </td>
+                        <td>
+                            {{ user.lastLoginDate.nice }}
+                        </td>
+                    </tr>
+                {% endif %}
+
+            {% endfor %}
+        </table>
+
+    {% else %}
+        <div class="empty">
+
+            {% set loginProviders = craft.social.getLoginProviders() %}
+
+            {% if loginProviders|length > 0 %}
+                <h2>{{ "Manage login accounts" }}</h2>
+                <p class="light">{{ "Login accounts will appear here once users start to login with social login providers." }}</p>
+            {% else %}
+                <h2>{{ "Configure a login provider" }}</h2>
+                <p class="light">{{ "To get started you need to {link} that users will be able to login with."|t({ link: '<a href="'~url('social/loginproviders')~'">{label}</a>'|t({label: 'configure a login provider'|t }) })|raw }}</p>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endset %}

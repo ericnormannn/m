@@ -1,0 +1,30 @@
+{% requireLogin %}
+
+{% extends "_layout" %}
+{% block content %}
+ 
+
+    all user events
+    {% if user.photoUrl %}
+        {% set photoUrl = user.photoUrl %}
+    {% else %}
+      
+    {% endif %}		
+	<!-- <div id="chat" class="l-demo-container">	
+		<input id="userName" value="{{currentUser.firstName}}" type="hidden">
+		<input id="currentUser" value="{{currentUser.id}}" type="hidden">
+		<input id="userImage" value="{{ photoUrl }}" type="hidden">
+
+
+		<ul id='example-messages' class="example-chat-messages bottom-med">
+			
+		</ul>
+
+		<footer>
+			<input type='text' id='messageInput'  placeholder='Type a message...'>
+			<button>Send</button>
+		</footer>
+	</div> -->
+
+
+{% endblock %}
